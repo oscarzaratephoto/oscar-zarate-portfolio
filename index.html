@@ -157,29 +157,20 @@ body::after {
 .nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
 
 @media (max-width: 768px) {
-  .nav-hamburger { display: flex; position: relative; z-index: 200; }
+  .nav-hamburger { display: flex; }
   .nav-links {
     display: none;
     position: fixed;
-    top: 0; left: 0;
-    width: 100vw; height: 100vh;
+    inset: 0;
     background: var(--black);
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 40px;
-    z-index: 150;
+    gap: 32px;
+    z-index: 99;
   }
   .nav-links.open { display: flex; }
-  .nav-links a { 
-    font-family: 'Barlow Condensed', sans-serif !important;
-    font-size: 2rem !important; 
-    font-weight: 700 !important;
-    letter-spacing: 0.2em; 
-    color: var(--white) !important;
-    opacity: 1 !important;
-  }
-  nav { z-index: 190; }
+  .nav-links a { font-size: 1rem !important; letter-spacing: 0.3em; }
 }
 
 /* NAV */
