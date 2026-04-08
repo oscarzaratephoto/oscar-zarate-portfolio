@@ -158,9 +158,9 @@ body::after {
 .nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
 
 @media (max-width: 768px) {
-  .nav-hamburger { display: flex; }
+  .nav-hamburger { display: flex; position: relative; z-index: 102; }
   nav {
-    z-index: 100;
+    z-index: 101;
     mix-blend-mode: normal;
     background: rgba(8,8,8,0.95);
     padding: 16px 20px;
@@ -169,16 +169,17 @@ body::after {
   .nav-links {
     display: none;
     position: fixed;
-    inset: 0;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
     background: var(--black);
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 32px;
-    z-index: 99;
+    gap: 40px;
+    z-index: 100;
   }
   .nav-links.open { display: flex; }
-  .nav-links a { font-size: 1.4rem !important; letter-spacing: 0.3em; color: var(--white); }
+  .nav-links a { font-size: 1.8rem !important; letter-spacing: 0.2em; color: var(--white); font-family: 'Barlow Condensed', sans-serif; font-weight: 700; }
 }
 
 /* NAV */
