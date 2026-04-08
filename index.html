@@ -241,9 +241,10 @@ nav {
 
 .hero-title {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(4.5rem, 9vw, 8rem);
+  font-size: clamp(3rem, 10vw, 8rem);
   line-height: 0.9;
   letter-spacing: 0.02em;
+  font-weight: 900;
   opacity: 0;
   animation: fadeUp 1s ease forwards 0.5s;
 }
@@ -785,17 +786,40 @@ footer {
 
 /* GALLERY END */
 @media (max-width: 768px) {
-  nav { padding: 20px 24px; }
-  .nav-links { display: none; }
-  .hero { grid-template-columns: 1fr; }
-  .hero-right { display: none; }
-  .hero-left { padding: 0 24px 60px; }
-  .disciplines { padding: 80px 24px; }
-  .disc-grid { grid-template-columns: 1fr; }
-  .about { grid-template-columns: 1fr; padding: 80px 24px; }
-  .about-visual { height: 280px; }
-  .contact { grid-template-columns: 1fr; padding: 80px 24px; }
-  footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px 24px; }
+  /* NAV */
+  nav { padding: 16px 20px; }
+
+  /* HERO */
+  .hero-left { padding: 0 20px 60px !important; }
+  .hero-title { font-size: 3.2rem !important; }
+  .hero-sub { font-size: 0.82rem; max-width: 100%; }
+  .hero-cta { flex-direction: column; gap: 10px; }
+  .btn-primary, .btn-ghost { text-align: center; }
+  .scroll-hint { left: 20px; }
+
+  /* ABOUT */
+  .about { grid-template-columns: 1fr; padding: 60px 20px; gap: 40px; }
+  .about-visual { height: 300px; }
+
+  /* SERVICES */
+  .services { padding: 60px 20px; }
+  .services-grid { grid-template-columns: 1fr; }
+
+  /* GALLERY */
+  .gallery-filters { padding: 0 20px 24px; }
+  .gallery-grid { columns: 2; padding: 0 12px; }
+
+  /* CONTACT */
+  .contact { grid-template-columns: 1fr; padding: 60px 20px; gap: 40px; }
+  .contact-title { font-size: 3rem; }
+
+  /* FOOTER */
+  footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px 20px; }
+
+  /* WHATSAPP — move up so it doesn't overlap buttons */
+  .whatsapp-float { bottom: 20px; right: 20px; width: 48px; height: 48px; }
+  .whatsapp-float svg { width: 22px; height: 22px; }
+  .whatsapp-tooltip { display: none; }
 }
 /* WHATSAPP FLOATING BUTTON */
 .whatsapp-float {
