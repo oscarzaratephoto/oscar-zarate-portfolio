@@ -143,7 +143,8 @@ body::after {
   border: none;
   cursor: pointer;
   padding: 4px;
-  mix-blend-mode: difference;
+  z-index: 101;
+  position: relative;
 }
 .nav-hamburger span {
   display: block;
@@ -158,6 +159,13 @@ body::after {
 
 @media (max-width: 768px) {
   .nav-hamburger { display: flex; }
+  nav {
+    z-index: 100;
+    mix-blend-mode: normal;
+    background: rgba(8,8,8,0.95);
+    padding: 16px 20px;
+  }
+  .nav-logo { mix-blend-mode: normal; color: var(--white); }
   .nav-links {
     display: none;
     position: fixed;
@@ -170,7 +178,7 @@ body::after {
     z-index: 99;
   }
   .nav-links.open { display: flex; }
-  .nav-links a { font-size: 1rem !important; letter-spacing: 0.3em; }
+  .nav-links a { font-size: 1.4rem !important; letter-spacing: 0.3em; color: var(--white); }
 }
 
 /* NAV */
@@ -182,7 +190,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  mix-blend-mode: difference;
+  background: linear-gradient(to bottom, rgba(8,8,8,0.8) 0%, transparent 100%);
 }
 
 .nav-logo {
@@ -1142,10 +1150,12 @@ footer {
   function toggleNav() {
     document.getElementById('navLinks').classList.toggle('open');
     document.getElementById('hamburger').classList.toggle('open');
+    document.querySelector('nav').classList.toggle('menu-open');
   }
   function closeNav() {
     document.getElementById('navLinks').classList.remove('open');
     document.getElementById('hamburger').classList.remove('open');
+    document.querySelector('nav').classList.remove('menu-open');
   }
 
   // Scroll reveal - lower threshold so it triggers earlier
