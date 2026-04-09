@@ -112,7 +112,7 @@ nav {
 }
 .nav-links a:hover { opacity: 1; }
 
-/* HAMBURGER */
+/* HAMBURGER BUTTON */
 .nav-hamburger {
   display: none;
   flex-direction: column;
@@ -122,7 +122,7 @@ nav {
   cursor: pointer;
   padding: 4px;
   position: relative;
-  z-index: 201;
+  z-index: 300;
 }
 .nav-hamburger span {
   display: block;
@@ -135,22 +135,68 @@ nav {
 .nav-hamburger.open span:nth-child(2) { opacity: 0; }
 .nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
+/* DRAWER */
+.nav-drawer {
+  position: fixed;
+  top: 0; right: -100%;
+  width: 75%;
+  max-width: 300px;
+  height: 100vh;
+  background: #0f0f0f;
+  border-left: 1px solid var(--gray);
+  z-index: 250;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 40px;
+  transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  visibility: hidden;
+}
+
+.nav-drawer.open { right: 0; visibility: visible; }
+
+.nav-drawer a {
+  display: block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+  text-decoration: none;
+  padding: 16px 0;
+  border-bottom: 1px solid #1a1a1a;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+.nav-drawer a:first-child { border-top: 1px solid #1a1a1a; }
+.nav-drawer a:hover { color: var(--red); padding-left: 8px; }
+
+.nav-drawer-footer {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--mid);
+}
+
+/* BACKDROP */
+.nav-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 240;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+.nav-backdrop.open { opacity: 1; visibility: visible; }
+
 @media (max-width: 768px) {
   nav { padding: 16px 24px; }
+  .nav-links { display: none; }
   .nav-hamburger { display: flex; }
-  .nav-links {
-    display: none;
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(8,8,8,0.98);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    z-index: 200;
-  }
-  .nav-links.open { display: flex; }
-  .nav-links a { font-size: 1.3rem !important; letter-spacing: 0.3em; opacity: 1; }
 }
 
 /* HERO */
@@ -691,16 +737,26 @@ footer {
 <!-- NAV -->
 <nav id="mainNav">
   <a href="#" class="nav-logo">OZS <span style="color:var(--red);font-weight:300;font-size:0.6em;letter-spacing:0.3em;margin-left:8px;">FOTOGRAFÍA DEPORTIVA</span></a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#galeria" onclick="closeNav()">Trabajo</a></li>
-    <li><a href="#servicios" onclick="closeNav()">Servicios</a></li>
-    <li><a href="#sobre-mi" onclick="closeNav()">Sobre mí</a></li>
-    <li><a href="#contacto" onclick="closeNav()">Contacto</a></li>
+  <ul class="nav-links">
+    <li><a href="#galeria">Trabajo</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#sobre-mi">Sobre mí</a></li>
+    <li><a href="#contacto">Contacto</a></li>
   </ul>
   <button class="nav-hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menú">
     <span></span><span></span><span></span>
   </button>
 </nav>
+
+<!-- DRAWER (móvil) -->
+<div class="nav-drawer" id="navDrawer">
+  <a href="#galeria" onclick="closeNav()">Trabajo</a>
+  <a href="#servicios" onclick="closeNav()">Servicios</a>
+  <a href="#sobre-mi" onclick="closeNav()">Sobre mí</a>
+  <a href="#contacto" onclick="closeNav()">Contacto</a>
+  <div class="nav-drawer-footer">@oscarzarateph</div>
+</div>
+<div class="nav-backdrop" id="navBackdrop" onclick="closeNav()"></div>
 
 <!-- HERO -->
 <section class="hero">
@@ -891,9 +947,9 @@ footer {
       ¿Tienes un evento deportivo, una campaña o un proyecto editorial? Cuéntame y creamos algo memorable juntos. Basado en Bogotá, disponible en toda Colombia.
     </p>
     <div class="contact-links reveal">
-      <a href="mailto:oscarzarateph@outlook.com">
+      <a href="/cdn-cgi/l/email-protection#fc938f9f9d8e869d8e9d88998c94bc93898890939397d29f9391">
         <span class="icon">✉</span>
-        oscarzarateph@outlook.com
+        <span class="__cf_email__" data-cfemail="b5dac6d6d4c7cfd4c7d4c1d0c5ddf5dac0c1d9dadade9bd6dad8">[email&#160;protected]</span>
       </a>
       <a href="https://wa.me/573118131881" target="_blank">
         <span class="icon">💬</span>
@@ -945,15 +1001,22 @@ footer {
   </svg>
 </a>
 
-<script>
-  // Hamburger menu
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Drawer menu
   function toggleNav() {
-    document.getElementById('navLinks').classList.toggle('open');
-    document.getElementById('hamburger').classList.toggle('open');
+    const drawer = document.getElementById('navDrawer');
+    const backdrop = document.getElementById('navBackdrop');
+    const hamburger = document.getElementById('hamburger');
+    drawer.classList.toggle('open');
+    backdrop.classList.toggle('open');
+    hamburger.classList.toggle('open');
+    document.body.style.overflow = drawer.classList.contains('open') ? 'hidden' : '';
   }
   function closeNav() {
-    document.getElementById('navLinks').classList.remove('open');
+    document.getElementById('navDrawer').classList.remove('open');
+    document.getElementById('navBackdrop').classList.remove('open');
     document.getElementById('hamburger').classList.remove('open');
+    document.body.style.overflow = '';
   }
 
   // Scroll reveal
@@ -991,14 +1054,4 @@ footer {
   document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      document.querySelectorAll('.gallery-item').forEach(item => {
-        item.style.display = item.dataset.cat === filter ? '' : 'none';
-      });
-    });
-  });
-</script>
-
-</body>
-</html>
+      btn.c
