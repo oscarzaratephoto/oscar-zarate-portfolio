@@ -11,7 +11,7 @@
 <meta name="author" content="Óscar Zárate">
 <meta name="robots" content="index, follow">
 
-<!-- Open Graph (WhatsApp, redes sociales) -->
+<!-- Open Graph -->
 <meta property="og:title" content="Óscar Zárate — Fotografía Deportiva">
 <meta property="og:description" content="Capturo el esfuerzo, la emoción y la historia humana detrás del deporte. Fútbol, atletismo y ciclismo en Colombia.">
 <meta property="og:image" content="OZS_0755-2.jpg">
@@ -24,7 +24,7 @@
 <meta name="twitter:description" content="Fotografía deportiva profesional en Colombia.">
 <meta name="twitter:image" content="OZS_0755-2.jpg">
 
-<!-- Favicon SVG -->
+<!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23080808'/><text y='.9em' font-size='80' x='10'>📷</text></svg>">
 
 <!-- Google Analytics -->
@@ -70,119 +70,18 @@ body::after {
   z-index: 9000;
 }
 
-/* FILTER BUTTONS */
-.gallery-filters {
-  display: flex;
-  gap: 8px;
-  padding: 0 48px 32px;
-  flex-wrap: wrap;
-}
-.filter-btn {
-  background: transparent;
-  border: 1px solid var(--gray);
-  color: var(--mid);
-  padding: 8px 20px;
-  font-family: 'Barlow', sans-serif;
-  font-size: 0.72rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.filter-btn:hover, .filter-btn.active {
-  border-color: var(--red);
-  color: var(--white);
-  background: var(--red);
-}
-
-/* SERVICES */
-.services {
-  padding: 120px 48px;
-  border-top: 1px solid var(--gray);
-}
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  margin-top: 48px;
-}
-.service-item {
-  padding: 40px 32px;
-  background: var(--gray);
-  border-bottom: 3px solid transparent;
-  transition: border-color 0.3s ease, background 0.3s ease;
-}
-.service-item:hover {
-  background: #1e1e1e;
-  border-bottom-color: var(--red);
-}
-.service-icon { font-size: 1.6rem; margin-bottom: 16px; }
-.service-name {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 1.3rem;
-  letter-spacing: 0.05em;
-  margin-bottom: 10px;
-}
-.service-desc {
-  font-size: 0.82rem;
-  line-height: 1.7;
-  color: var(--light);
-}
-@media (max-width: 768px) {
-  .services { padding: 80px 24px; }
-  .services-grid { grid-template-columns: 1fr; }
-  .gallery-filters { padding: 0 24px 24px; }
-}
-
-/* HAMBURGER */
-.nav-hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 4px;
-  mix-blend-mode: difference;
-}
-.nav-hamburger span {
-  display: block;
-  width: 24px;
-  height: 1px;
-  background: var(--white);
-  transition: all 0.3s ease;
-}
-.nav-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
-.nav-hamburger.open span:nth-child(2) { opacity: 0; }
-.nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
-
-@media (max-width: 768px) {
-  .nav-hamburger { display: flex; }
-  .nav-links {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: var(--black);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 32px;
-    z-index: 99;
-  }
-  .nav-links.open { display: flex; }
-  .nav-links a { font-size: 1rem !important; letter-spacing: 0.3em; }
-}
-
 /* NAV */
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
-  z-index: 100;
-  padding: 24px 48px;
+  z-index: 200;
+  padding: 20px 48px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  mix-blend-mode: difference;
+  background: rgba(8,8,8,0.85);
+  backdrop-filter: blur(8px);
+  transition: background 0.3s ease;
 }
 
 .nav-logo {
@@ -192,6 +91,8 @@ nav {
   letter-spacing: 0.1em;
   color: var(--white);
   text-decoration: none;
+  position: relative;
+  z-index: 201;
 }
 
 .nav-links {
@@ -211,62 +112,127 @@ nav {
 }
 .nav-links a:hover { opacity: 1; }
 
+/* HAMBURGER */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  position: relative;
+  z-index: 201;
+}
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  transition: all 0.3s ease;
+}
+.nav-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+@media (max-width: 768px) {
+  nav { padding: 16px 24px; }
+  .nav-hamburger { display: flex; }
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(8,8,8,0.98);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    z-index: 200;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { font-size: 1.3rem !important; letter-spacing: 0.3em; opacity: 1; }
+}
+
 /* HERO */
 .hero {
   height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   position: relative;
   overflow: hidden;
 }
 
-.hero-left {
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(8,8,8,0.88) 0%, rgba(8,8,8,0.5) 55%, rgba(8,8,8,0.2) 100%);
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .hero-overlay { background: rgba(8,8,8,0.75); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: 0 48px 72px;
-  position: relative;
-  z-index: 2;
+  max-width: 680px;
+}
+
+@media (max-width: 768px) {
+  .hero-content { padding: 0 24px 80px; max-width: 100%; }
 }
 
 .hero-eyebrow {
-  font-size: 0.7rem;
-  letter-spacing: 0.3em;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--red);
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   opacity: 0;
   animation: fadeUp 1s ease forwards 0.3s;
+  line-height: 1.8;
 }
 
 .hero-title {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(4.5rem, 9vw, 8rem);
+  font-size: clamp(4rem, 10vw, 8rem);
   line-height: 0.9;
   letter-spacing: 0.02em;
   opacity: 0;
   animation: fadeUp 1s ease forwards 0.5s;
 }
 
-.hero-title span {
-  color: var(--red);
-  display: block;
-}
+.hero-title span { color: var(--red); display: block; }
 
 .hero-sub {
-  margin-top: 28px;
-  font-size: 0.9rem;
+  margin-top: 24px;
+  font-size: 0.88rem;
   line-height: 1.75;
   color: var(--light);
-  max-width: 340px;
+  max-width: 400px;
   opacity: 0;
   animation: fadeUp 1s ease forwards 0.8s;
 }
 
 .hero-cta {
-  margin-top: 40px;
+  margin-top: 36px;
   display: flex;
-  gap: 16px;
+  gap: 12px;
+  flex-wrap: wrap;
   opacity: 0;
   animation: fadeUp 1s ease forwards 1s;
 }
@@ -274,8 +240,8 @@ nav {
 .btn-primary {
   background: var(--red);
   color: var(--white);
-  padding: 14px 32px;
-  font-size: 0.78rem;
+  padding: 14px 28px;
+  font-size: 0.75rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   text-decoration: none;
@@ -287,10 +253,10 @@ nav {
 .btn-primary:hover { background: var(--red-dim); transform: translateY(-2px); }
 
 .btn-ghost {
-  border: 1px solid rgba(242,240,236,0.3);
+  border: 1px solid rgba(242,240,236,0.4);
   color: var(--white);
-  padding: 14px 32px;
-  font-size: 0.78rem;
+  padding: 14px 28px;
+  font-size: 0.75rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   text-decoration: none;
@@ -301,99 +267,25 @@ nav {
 }
 .btn-ghost:hover { border-color: var(--white); transform: translateY(-2px); }
 
-.hero-right {
-  position: relative;
-  overflow: hidden;
-}
-
-/* Mosaic of colored blocks simulating photos */
-.hero-mosaic {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
-  gap: 3px;
-  opacity: 0;
-  animation: fadeIn 1.2s ease forwards 0.2s;
-}
-
-.mosaic-cell {
-  overflow: hidden;
-  position: relative;
-}
-
-.mosaic-cell::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  transition: transform 0.6s ease;
-}
-
-.mosaic-cell:hover::before { transform: scale(1.05); }
-
-/* Simulated photo backgrounds using CSS gradients */
-.mc-1::before { background: linear-gradient(135deg, #1a1a1a 0%, #3d2b1a 40%, #6b4c2a 70%, #2a1a0a 100%); }
-.mc-2::before { background: linear-gradient(160deg, #0d1520 0%, #1a2d44 50%, #0a1828 100%); }
-.mc-3 { grid-row: span 2; }
-.mc-3::before { background: linear-gradient(180deg, #1a0a0a 0%, #3d1515 30%, #1a0808 70%, #0a0505 100%); }
-.mc-4::before { background: linear-gradient(120deg, #0a1a0a 0%, #1a3020 50%, #0d2010 100%); }
-.mc-5::before { background: linear-gradient(200deg, #1a1510 0%, #302518 50%, #1a1008 100%); }
-
-/* Overlay text on mosaic cells */
-.mosaic-label {
-  position: absolute;
-  bottom: 12px;
-  left: 14px;
-  font-size: 0.62rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(242,240,236,0.5);
-  z-index: 2;
-}
-
-
-.hero-counter {
-  position: absolute;
-  bottom: 72px;
-  right: 48px;
-  z-index: 5;
-  text-align: right;
-  opacity: 0;
-  animation: fadeUp 1s ease forwards 1.2s;
-}
-.hero-counter .num {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 3.5rem;
-  color: var(--red);
-  line-height: 1;
-}
-.hero-counter .label {
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--mid);
-}
-
-/* SCROLL INDICATOR */
 .scroll-hint {
   position: absolute;
-  bottom: 32px;
+  bottom: 28px;
   left: 48px;
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--mid);
   opacity: 0;
   animation: fadeUp 1s ease forwards 1.4s;
-  z-index: 10;
+  z-index: 3;
 }
+@media (max-width: 768px) { .scroll-hint { display: none; } }
+
 .scroll-line {
-  width: 40px;
-  height: 1px;
+  width: 36px; height: 1px;
   background: var(--mid);
   position: relative;
   overflow: hidden;
@@ -401,107 +293,12 @@ nav {
 .scroll-line::after {
   content: '';
   position: absolute;
-  left: -100%;
-  top: 0;
-  width: 100%;
-  height: 100%;
+  left: -100%; top: 0;
+  width: 100%; height: 100%;
   background: var(--white);
   animation: lineSlide 2s ease infinite 1.5s;
 }
-@keyframes lineSlide {
-  0% { left: -100%; }
-  100% { left: 100%; }
-}
-
-/* DISCIPLINES */
-.disciplines {
-  padding: 120px 48px;
-  border-top: 1px solid var(--gray);
-}
-
-.section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 64px;
-}
-
-.section-tag {
-  font-size: 0.68rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--red);
-}
-
-.section-title {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  line-height: 1;
-  letter-spacing: 0.03em;
-}
-
-.section-count {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 1rem;
-  color: var(--mid);
-  letter-spacing: 0.1em;
-}
-
-.disc-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-}
-
-.disc-item {
-  position: relative;
-  padding: 48px 36px;
-  background: var(--gray);
-  overflow: hidden;
-  transition: background 0.4s ease;
-  cursor: none;
-}
-
-.disc-item::before {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 3px;
-  background: var(--red);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s ease;
-}
-
-.disc-item:hover { background: #1e1e1e; }
-.disc-item:hover::before { transform: scaleX(1); }
-
-.disc-number {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 4rem;
-  color: rgba(232,37,26,0.12);
-  line-height: 1;
-  margin-bottom: 20px;
-  transition: color 0.4s ease;
-}
-.disc-item:hover .disc-number { color: rgba(232,37,26,0.25); }
-
-.disc-icon {
-  font-size: 1.8rem;
-  margin-bottom: 16px;
-}
-
-.disc-name {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 1.5rem;
-  margin-bottom: 12px;
-}
-
-.disc-desc {
-  font-size: 0.83rem;
-  line-height: 1.7;
-  color: var(--light);
-}
+@keyframes lineSlide { 0% { left: -100%; } 100% { left: 100%; } }
 
 /* ABOUT */
 .about {
@@ -516,12 +313,14 @@ nav {
 .about-visual {
   position: relative;
   height: 500px;
+  overflow: hidden;
 }
 
-.about-block-main {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(160deg, #1a1010 0%, #2d1a1a 40%, #0a0808 100%);
+.about-visual img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
 }
 
 .about-block-accent {
@@ -547,33 +346,185 @@ nav {
   color: var(--light);
   margin-bottom: 16px;
 }
-
-.about-text em {
-  font-style: italic;
-  color: var(--white);
-  font-family: 'Barlow Condensed', sans-serif;
-}
+.about-text em { font-style: italic; color: var(--white); }
 
 .stats-row {
   display: flex;
-  gap: 40px;
+  gap: 32px;
   margin-top: 40px;
   padding-top: 40px;
   border-top: 1px solid var(--gray);
+  flex-wrap: wrap;
 }
 
 .stat-item .num {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: var(--red);
   line-height: 1;
 }
 .stat-item .lbl {
-  font-size: 0.72rem;
+  font-size: 0.65rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--mid);
   margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  .about { grid-template-columns: 1fr; padding: 80px 24px; gap: 40px; }
+  .about-visual { height: 300px; }
+}
+
+/* SERVICES */
+.services {
+  padding: 120px 48px;
+  border-top: 1px solid var(--gray);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 48px;
+}
+
+.section-tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+.section-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1;
+  letter-spacing: 0.03em;
+}
+
+.section-count {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem;
+  color: var(--mid);
+  letter-spacing: 0.1em;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.service-item {
+  padding: 40px 32px;
+  background: var(--gray);
+  border-bottom: 3px solid transparent;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+.service-item:hover { background: #1e1e1e; border-bottom-color: var(--red); }
+.service-icon { font-size: 1.6rem; margin-bottom: 16px; }
+.service-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+.service-desc { font-size: 0.82rem; line-height: 1.7; color: var(--light); }
+
+@media (max-width: 768px) {
+  .services { padding: 80px 24px; }
+  .services-grid { grid-template-columns: 1fr; }
+}
+
+/* GALLERY */
+.gallery-section { border-top: 1px solid var(--gray); }
+
+.gallery-header { padding: 80px 48px 40px; }
+
+@media (max-width: 768px) { .gallery-header { padding: 60px 24px 32px; } }
+
+.gallery-filters {
+  display: flex;
+  gap: 8px;
+  padding: 0 48px 32px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid var(--gray);
+  color: var(--mid);
+  padding: 8px 20px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.filter-btn:hover, .filter-btn.active {
+  border-color: var(--red);
+  color: var(--white);
+  background: var(--red);
+}
+
+@media (max-width: 768px) { .gallery-filters { padding: 0 24px 24px; } }
+
+/* GALLERY MASONRY */
+.gallery-grid {
+  columns: 3;
+  column-gap: 4px;
+  padding: 0 48px;
+}
+
+@media (max-width: 768px) { .gallery-grid { columns: 2; padding: 0 12px; } }
+
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: 4px;
+  position: relative;
+  overflow: hidden;
+  background: var(--gray);
+  display: block;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(0.7);
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(1);
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 14px;
+  pointer-events: none;
+}
+
+.gallery-overlay span {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+}
+
+.gallery-item:hover .gallery-overlay span {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* CONTACT */
@@ -592,7 +543,6 @@ nav {
   line-height: 0.92;
   letter-spacing: 0.02em;
 }
-
 .contact-title span { color: var(--red); display: block; }
 
 .contact-sub {
@@ -603,9 +553,26 @@ nav {
   max-width: 360px;
 }
 
-.form-group {
-  margin-bottom: 20px;
+.contact-links {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
+
+.contact-links a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--light);
+  font-size: 0.85rem;
+  transition: color 0.3s;
+}
+.contact-links a:hover { color: var(--white); }
+.contact-links .icon { color: var(--red); font-size: 1rem; }
+
+.form-group { margin-bottom: 20px; }
 
 .form-label {
   display: block;
@@ -629,11 +596,7 @@ nav {
   outline: none;
   transition: border-color 0.3s ease;
 }
-
-.form-input:focus, .form-textarea:focus {
-  border-bottom-color: var(--red);
-}
-
+.form-input:focus, .form-textarea:focus { border-bottom-color: var(--red); }
 .form-textarea { resize: vertical; min-height: 120px; }
 
 .form-submit {
@@ -646,12 +609,22 @@ nav {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   font-weight: 500;
-  cursor: none;
+  cursor: pointer;
   transition: background 0.3s ease, transform 0.2s ease;
   width: 100%;
   margin-top: 8px;
 }
 .form-submit:hover { background: var(--red-dim); transform: translateY(-2px); }
+
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 40px 20px;
+}
+.form-success .check { font-size: 2rem; margin-bottom: 12px; }
+.form-success p { font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; color: var(--light); }
+
+@media (max-width: 768px) { .contact { grid-template-columns: 1fr; padding: 80px 24px; } }
 
 /* FOOTER */
 footer {
@@ -661,190 +634,62 @@ footer {
   justify-content: space-between;
   align-items: center;
 }
-
-.footer-logo {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 1rem;
-  letter-spacing: 0.15em;
-  color: var(--white);
-}
-
-.footer-copy {
-  font-size: 0.72rem;
-  color: var(--mid);
-  letter-spacing: 0.1em;
-}
-
-.footer-socials {
-  display: flex;
-  gap: 24px;
-}
+.footer-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; letter-spacing: 0.15em; color: var(--white); }
+.footer-copy { font-size: 0.72rem; color: var(--mid); letter-spacing: 0.1em; }
 .footer-socials a {
-  font-size: 0.68rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--mid);
-  text-decoration: none;
+  font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--mid); text-decoration: none;
+  display: flex; align-items: center; gap: 8px;
   transition: color 0.3s;
 }
 .footer-socials a:hover { color: var(--red); }
 
-/* Animations */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
+@media (max-width: 768px) { footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px 24px; } }
 
-/* Scroll reveal */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.reveal.visible {
-  opacity: 1;
-  transform: none;
-}
-
-/* Success message */
-.form-success {
-  display: none;
-  text-align: center;
-  padding: 40px 20px;
-}
-.form-success .check {
-  font-size: 2rem;
-  margin-bottom: 12px;
-}
-.form-success p {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 1.2rem;
-  font-style: italic;
-  color: var(--light);
-}
-
-/* GALLERY - Masonry */
-.gallery-grid {
-  columns: 3;
-  column-gap: 6px;
-  padding: 0 48px;
-}
-
-.gallery-item {
-  break-inside: avoid;
-  margin-bottom: 6px;
-  position: relative;
-  overflow: hidden;
-  background: var(--gray);
-  display: block;
-}
-
-.gallery-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.5s ease;
-}
-
-.gallery-item:hover img { transform: scale(1.03); }
-
-.gallery-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(8,8,8,0);
-  display: flex;
-  align-items: flex-end;
-  padding: 14px;
-  transition: background 0.4s ease;
-}
-
-.gallery-item:hover .gallery-overlay { background: rgba(8,8,8,0.5); }
-
-.gallery-overlay span {
-  font-size: 0.62rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--white);
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.gallery-item:hover .gallery-overlay span {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (max-width: 768px) {
-  .gallery-grid { columns: 2; padding: 0 12px; }
-}
-
-/* GALLERY END */
-@media (max-width: 768px) {
-  nav { padding: 20px 24px; }
-  .nav-links { display: none; }
-  .hero { grid-template-columns: 1fr; }
-  .hero-right { display: none; }
-  .hero-left { padding: 0 24px 60px; }
-  .disciplines { padding: 80px 24px; }
-  .disc-grid { grid-template-columns: 1fr; }
-  .about { grid-template-columns: 1fr; padding: 80px 24px; }
-  .about-visual { height: 280px; }
-  .contact { grid-template-columns: 1fr; padding: 80px 24px; }
-  footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px 24px; }
-}
-/* WHATSAPP FLOATING BUTTON */
+/* WHATSAPP */
 .whatsapp-float {
   position: fixed;
-  bottom: 32px;
-  right: 32px;
-  width: 56px;
-  height: 56px;
+  bottom: 28px; right: 28px;
+  width: 54px; height: 54px;
   background: #25D366;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; align-items: center; justify-content: center;
   z-index: 9000;
   box-shadow: 0 4px 20px rgba(37,211,102,0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-decoration: none;
 }
-.whatsapp-float:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 28px rgba(37,211,102,0.6);
-}
-.whatsapp-float svg {
-  width: 28px;
-  height: 28px;
-  fill: white;
-}
+.whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+.whatsapp-float svg { width: 26px; height: 26px; fill: white; }
 .whatsapp-tooltip {
-  position: absolute;
-  right: 68px;
-  background: var(--black);
-  color: var(--white);
-  padding: 6px 12px;
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
+  position: absolute; right: 64px;
+  background: var(--black); color: var(--white);
+  padding: 6px 12px; font-size: 0.7rem;
+  letter-spacing: 0.1em; white-space: nowrap;
+  opacity: 0; pointer-events: none;
   transition: opacity 0.3s ease;
   border: 1px solid var(--gray);
 }
 .whatsapp-float:hover .whatsapp-tooltip { opacity: 1; }
 
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav>
+<nav id="mainNav">
   <a href="#" class="nav-logo">OZS <span style="color:var(--red);font-weight:300;font-size:0.6em;letter-spacing:0.3em;margin-left:8px;">FOTOGRAFÍA DEPORTIVA</span></a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#galeria" onclick="closeNav()">Trabajo</a></li>
@@ -858,14 +703,10 @@ footer {
 </nav>
 
 <!-- HERO -->
-<section class="hero" style="display:block; height:100vh; position:relative; overflow:hidden;">
-  <!-- Background photo -->
-  <img src="OZS_0755-2.jpg" loading="eager" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;z-index:0;" />
-  <!-- Dark overlay -->
-  <div style="position:absolute;inset:0;background:linear-gradient(to right, rgba(8,8,8,0.82) 0%, rgba(8,8,8,0.4) 55%, rgba(8,8,8,0.15) 100%);z-index:1;"></div>
-  
-
-  <div class="hero-left" style="position:relative;z-index:3;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:0 48px 72px;">
+<section class="hero">
+  <img class="hero-bg" src="OZS_0755-2.jpg" loading="eager" alt="Fotografía deportiva Óscar Zárate" />
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
     <p class="hero-eyebrow">Fotografía Deportiva · Acreditado Dimayor · Colombia</p>
     <h1 class="hero-title">
       DONDE<br>
@@ -880,8 +721,7 @@ footer {
       <a href="#contacto" class="btn-ghost">Trabajemos juntos</a>
     </div>
   </div>
-
-  <div class="scroll-hint" style="z-index:3;">
+  <div class="scroll-hint">
     <div class="scroll-line"></div>
     Desplázate
   </div>
@@ -890,10 +730,9 @@ footer {
 <!-- ABOUT -->
 <section class="about" id="sobre-mi">
   <div class="about-visual reveal">
-    <img src="Perfil2.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;" />
+    <img src="Perfil2.jpg" alt="Óscar Zárate fotógrafo deportivo" />
     <div class="about-block-accent"></div>
   </div>
-
   <div class="about-content">
     <p class="about-tag reveal">Sobre mí</p>
     <h2 class="about-title reveal">10 AÑOS<br>DE OJO</h2>
@@ -965,8 +804,8 @@ footer {
 
 <!-- GALLERY -->
 <section class="gallery-section" id="galeria">
-  <div style="padding: 0 48px 40px; border-top: 1px solid var(--gray);">
-    <div class="section-header reveal" style="padding-top: 120px;">
+  <div class="gallery-header">
+    <div class="section-header reveal">
       <div>
         <p class="section-tag">Portafolio</p>
         <h2 class="section-title">EL TRABAJO</h2>
@@ -975,76 +814,68 @@ footer {
     </div>
   </div>
 
-  <!-- Filtros -->
   <div class="gallery-filters">
-    <button class="filter-btn active" data-filter="all">Todo</button>
-    <button class="filter-btn" data-filter="futbol">Fútbol</button>
+    <button class="filter-btn active" data-filter="futbol">Fútbol</button>
     <button class="filter-btn" data-filter="atletismo">Atletismo</button>
     <button class="filter-btn" data-filter="ciclismo">Ciclismo</button>
   </div>
 
   <div class="gallery-grid">
     <!-- FÚTBOL -->
-    <div class="gallery-item reveal" data-cat="futbol"><img src="OZS_8691.jpg" loading="lazy" alt="Fútbol" /><div class="gallery-overlay"><span>Fútbol</span></div></div>
-    <div class="gallery-item reveal" data-cat="futbol"><img src="OZS_9436.jpg" loading="lazy" alt="Equipo" /><div class="gallery-overlay"><span>Equipo</span></div></div>
-    <div class="gallery-item reveal" data-cat="futbol"><img src="OZS_0755-2.jpg" loading="lazy" alt="Celebración" /><div class="gallery-overlay"><span>Celebración</span></div></div>
-    <div class="gallery-item reveal" data-cat="futbol"><img src="OZS_1159.jpg" loading="lazy" alt="Concentración" /><div class="gallery-overlay"><span>Concentración</span></div></div>
-    <div class="gallery-item reveal" data-cat="futbol"><img src="OZS_1208.jpg" loading="lazy" alt="Dolor" /><div class="gallery-overlay"><span>Dolor</span></div></div>
-    <div class="gallery-item reveal" data-cat="futbol"><img src="OZS_1219-Topaz-Gigapixel-2X.jpg" loading="lazy" alt="Detalle" /><div class="gallery-overlay"><span>Detalle</span></div></div>
-    <div class="gallery-item reveal" data-cat="futbol"><img src="OZS_1332.jpg" loading="lazy" alt="Precisión" /><div class="gallery-overlay"><span>Precisión</span></div></div>
-    <div class="gallery-item reveal" data-cat="futbol"><img src="OZS_1371.jpg" loading="lazy" alt="Tiro" /><div class="gallery-overlay"><span>Tiro</span></div></div>
-    <div class="gallery-item reveal" data-cat="futbol"><img src="OZS_1325.jpg" loading="lazy" alt="Jugada" /><div class="gallery-overlay"><span>Jugada</span></div></div>
-    <div class="gallery-item reveal" data-cat="futbol"><img src="OZS_1373.jpg" loading="lazy" alt="Contacto" /><div class="gallery-overlay"><span>Contacto</span></div></div>
-    <div class="gallery-item reveal" data-cat="futbol"><img src="OZS_1375.jpg" loading="lazy" alt="Identidad" /><div class="gallery-overlay"><span>Identidad</span></div></div>
-    <div class="gallery-item reveal" data-cat="futbol"><img src="OZS_1427.jpg" loading="lazy" alt="Disputa" /><div class="gallery-overlay"><span>Disputa</span></div></div>
-    <div class="gallery-item reveal" data-cat="futbol"><img src="OZS_1589.jpg" loading="lazy" alt="El juego" /><div class="gallery-overlay"><span>El juego</span></div></div>
-    <div class="gallery-item reveal" data-cat="futbol"><img src="OZS_2040.jpg" loading="lazy" alt="Guayos" /><div class="gallery-overlay"><span>Guayos</span></div></div>
-    <div class="gallery-item reveal" data-cat="futbol"><img src="OZS_2170.jpg" loading="lazy" alt="Número 26" /><div class="gallery-overlay"><span>Número 26</span></div></div>
-    <div class="gallery-item reveal" data-cat="futbol"><img src="OZS_2839.jpg" loading="lazy" alt="Córner" /><div class="gallery-overlay"><span>Córner</span></div></div>
-    <div class="gallery-item reveal" data-cat="futbol"><img src="OZS_2916.jpg" loading="lazy" alt="El momento" /><div class="gallery-overlay"><span>El momento</span></div></div>
-    <div class="gallery-item reveal" data-cat="futbol"><img src="OZS_2956.jpg" loading="lazy" alt="Tensión" /><div class="gallery-overlay"><span>Tensión</span></div></div>
-    <div class="gallery-item reveal" data-cat="futbol"><img src="OZS_8369-3.jpg" loading="lazy" alt="Fútbol femenino" /><div class="gallery-overlay"><span>Fútbol femenino</span></div></div>
-    <div class="gallery-item reveal" data-cat="futbol"><img src="OZS_8214-3.jpg" loading="lazy" alt="Acción" /><div class="gallery-overlay"><span>Acción</span></div></div>
-    <div class="gallery-item reveal" data-cat="futbol"><img src="OZS_8004-3.jpg" loading="lazy" alt="Carrera" /><div class="gallery-overlay"><span>Carrera</span></div></div>
-    <div class="gallery-item reveal" data-cat="futbol"><img src="OZS_7703-5.jpg" loading="lazy" alt="Detalle" /><div class="gallery-overlay"><span>Detalle</span></div></div>
-    <div class="gallery-item reveal" data-cat="futbol"><img src="OZS_7838-2.jpg" loading="lazy" alt="Portería" /><div class="gallery-overlay"><span>Portería</span></div></div>
-    <div class="gallery-item reveal" data-cat="futbol"><img src="OZS_7986-2.jpg" loading="lazy" alt="Disputa" /><div class="gallery-overlay"><span>Disputa</span></div></div>
-    <div class="gallery-item reveal" data-cat="futbol"><img src="OZS_8003-2.jpg" loading="lazy" alt="Velocidad" /><div class="gallery-overlay"><span>Velocidad</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_8691.jpg" loading="lazy" alt="Fútbol" /><div class="gallery-overlay"><span>Fútbol</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_9436.jpg" loading="lazy" alt="Equipo" /><div class="gallery-overlay"><span>Equipo</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_0755-2.jpg" loading="lazy" alt="Celebración" /><div class="gallery-overlay"><span>Celebración</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_1159.jpg" loading="lazy" alt="Concentración" /><div class="gallery-overlay"><span>Concentración</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_1208.jpg" loading="lazy" alt="Dolor" /><div class="gallery-overlay"><span>Dolor</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_1219-Topaz-Gigapixel-2X.jpg" loading="lazy" alt="Detalle" /><div class="gallery-overlay"><span>Detalle</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_1332.jpg" loading="lazy" alt="Precisión" /><div class="gallery-overlay"><span>Precisión</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_1371.jpg" loading="lazy" alt="Tiro" /><div class="gallery-overlay"><span>Tiro</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_1325.jpg" loading="lazy" alt="Jugada" /><div class="gallery-overlay"><span>Jugada</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_1373.jpg" loading="lazy" alt="Contacto" /><div class="gallery-overlay"><span>Contacto</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_1375.jpg" loading="lazy" alt="Identidad" /><div class="gallery-overlay"><span>Identidad</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_1427.jpg" loading="lazy" alt="Disputa" /><div class="gallery-overlay"><span>Disputa</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_1589.jpg" loading="lazy" alt="El juego" /><div class="gallery-overlay"><span>El juego</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_2040.jpg" loading="lazy" alt="Guayos" /><div class="gallery-overlay"><span>Guayos</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_2170.jpg" loading="lazy" alt="Número 26" /><div class="gallery-overlay"><span>Número 26</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_2839.jpg" loading="lazy" alt="Córner" /><div class="gallery-overlay"><span>Córner</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_2916.jpg" loading="lazy" alt="El momento" /><div class="gallery-overlay"><span>El momento</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_2956.jpg" loading="lazy" alt="Tensión" /><div class="gallery-overlay"><span>Tensión</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_8369-3.jpg" loading="lazy" alt="Fútbol femenino" /><div class="gallery-overlay"><span>Fútbol femenino</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_8214-3.jpg" loading="lazy" alt="Acción" /><div class="gallery-overlay"><span>Acción</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_8004-3.jpg" loading="lazy" alt="Carrera" /><div class="gallery-overlay"><span>Carrera</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_7703-5.jpg" loading="lazy" alt="Detalle" /><div class="gallery-overlay"><span>Detalle</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_7838-2.jpg" loading="lazy" alt="Portería" /><div class="gallery-overlay"><span>Portería</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_7986-2.jpg" loading="lazy" alt="Disputa" /><div class="gallery-overlay"><span>Disputa</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_8003-2.jpg" loading="lazy" alt="Velocidad" /><div class="gallery-overlay"><span>Velocidad</span></div></div>
     <!-- ATLETISMO -->
-    <div class="gallery-item reveal" data-cat="atletismo"><img src="_OZS5373-Edit.jpg" loading="lazy" alt="Atletismo" /><div class="gallery-overlay"><span>Atletismo</span></div></div>
-    <div class="gallery-item reveal" data-cat="atletismo"><img src="_OZS5427.jpg" loading="lazy" alt="Running" /><div class="gallery-overlay"><span>Running</span></div></div>
-    <div class="gallery-item reveal" data-cat="atletismo"><img src="_OZS5502.jpg" loading="lazy" alt="Foco" /><div class="gallery-overlay"><span>Foco</span></div></div>
-    <div class="gallery-item reveal" data-cat="atletismo"><img src="_OZS5524.jpg" loading="lazy" alt="Resistencia" /><div class="gallery-overlay"><span>Resistencia</span></div></div>
-    <div class="gallery-item reveal" data-cat="atletismo"><img src="_OZS5537-Edit.jpg" loading="lazy" alt="Velocidad" /><div class="gallery-overlay"><span>Velocidad</span></div></div>
-    <div class="gallery-item reveal" data-cat="atletismo"><img src="_OZS5671.jpg" loading="lazy" alt="Esfuerzo" /><div class="gallery-overlay"><span>Esfuerzo</span></div></div>
-    <div class="gallery-item reveal" data-cat="atletismo"><img src="_OZS5679.jpg" loading="lazy" alt="Determinación" /><div class="gallery-overlay"><span>Determinación</span></div></div>
-    <div class="gallery-item reveal" data-cat="atletismo"><img src="_OZS5738.jpg" loading="lazy" alt="Carrera" /><div class="gallery-overlay"><span>Carrera</span></div></div>
-    <div class="gallery-item reveal" data-cat="atletismo"><img src="_OZS5743.jpg" loading="lazy" alt="Sonrisa" /><div class="gallery-overlay"><span>Sonrisa</span></div></div>
-    <div class="gallery-item reveal" data-cat="atletismo"><img src="_OZS5883.jpg" loading="lazy" alt="Agua" /><div class="gallery-overlay"><span>Agua</span></div></div>
-    <div class="gallery-item reveal" data-cat="atletismo"><img src="_OZS2220.jpg" loading="lazy" alt="Running" /><div class="gallery-overlay"><span>Running</span></div></div>
-    <div class="gallery-item reveal" data-cat="atletismo"><img src="_OZS2422.jpg" loading="lazy" alt="Doble exposición" /><div class="gallery-overlay"><span>Doble exposición</span></div></div>
-    <div class="gallery-item reveal" data-cat="atletismo"><img src="_OZS5126.jpg" loading="lazy" alt="Running" /><div class="gallery-overlay"><span>Running</span></div></div>
-    <div class="gallery-item reveal" data-cat="atletismo"><img src="_OZS5436.jpg" loading="lazy" alt="Atletismo" /><div class="gallery-overlay"><span>Atletismo</span></div></div>
-    <div class="gallery-item reveal" data-cat="atletismo"><img src="_OZS5497.jpg" loading="lazy" alt="Carrera" /><div class="gallery-overlay"><span>Carrera</span></div></div>
-    <div class="gallery-item reveal" data-cat="atletismo"><img src="_OZS5512.jpg" loading="lazy" alt="Foco" /><div class="gallery-overlay"><span>Foco</span></div></div>
-    <div class="gallery-item reveal" data-cat="atletismo"><img src="_OZS5559_copia.jpg" loading="lazy" alt="Duatlón" /><div class="gallery-overlay"><span>Duatlón</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5373-Edit.jpg" loading="lazy" alt="Atletismo" /><div class="gallery-overlay"><span>Atletismo</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5427.jpg" loading="lazy" alt="Running" /><div class="gallery-overlay"><span>Running</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5502.jpg" loading="lazy" alt="Foco" /><div class="gallery-overlay"><span>Foco</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5524.jpg" loading="lazy" alt="Resistencia" /><div class="gallery-overlay"><span>Resistencia</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5537-Edit.jpg" loading="lazy" alt="Velocidad" /><div class="gallery-overlay"><span>Velocidad</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5671.jpg" loading="lazy" alt="Esfuerzo" /><div class="gallery-overlay"><span>Esfuerzo</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5679.jpg" loading="lazy" alt="Determinación" /><div class="gallery-overlay"><span>Determinación</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5738.jpg" loading="lazy" alt="Carrera" /><div class="gallery-overlay"><span>Carrera</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5743.jpg" loading="lazy" alt="Sonrisa" /><div class="gallery-overlay"><span>Sonrisa</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5883.jpg" loading="lazy" alt="Agua" /><div class="gallery-overlay"><span>Agua</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS2220.jpg" loading="lazy" alt="Running" /><div class="gallery-overlay"><span>Running</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS2422.jpg" loading="lazy" alt="Doble exposición" /><div class="gallery-overlay"><span>Doble exposición</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5126.jpg" loading="lazy" alt="Running" /><div class="gallery-overlay"><span>Running</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5436.jpg" loading="lazy" alt="Atletismo" /><div class="gallery-overlay"><span>Atletismo</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5497.jpg" loading="lazy" alt="Carrera" /><div class="gallery-overlay"><span>Carrera</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5512.jpg" loading="lazy" alt="Foco" /><div class="gallery-overlay"><span>Foco</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5559_copia.jpg" loading="lazy" alt="Duatlón" /><div class="gallery-overlay"><span>Duatlón</span></div></div>
     <!-- CICLISMO -->
-    <div class="gallery-item reveal" data-cat="ciclismo"><img src="_OZS4167.jpg" loading="lazy" alt="Ciclismo" /><div class="gallery-overlay"><span>Ciclismo</span></div></div>
-    <div class="gallery-item reveal" data-cat="ciclismo"><img src="_OZS4522.jpg" loading="lazy" alt="Pelotón" /><div class="gallery-overlay"><span>Pelotón</span></div></div>
-    <div class="gallery-item reveal" data-cat="ciclismo"><img src="_OZS4830.jpg" loading="lazy" alt="Colombia" /><div class="gallery-overlay"><span>Colombia</span></div></div>
-    <div class="gallery-item reveal" data-cat="ciclismo"><img src="_OZS4856.jpg" loading="lazy" alt="Hidratación" /><div class="gallery-overlay"><span>Hidratación</span></div></div>
-    <div class="gallery-item reveal" data-cat="ciclismo"><img src="_OZS3708.jpg" loading="lazy" alt="Panning" /><div class="gallery-overlay"><span>Panning</span></div></div>
-    <div class="gallery-item reveal" data-cat="ciclismo"><img src="Carrusel.jpg" loading="lazy" alt="Doble exposición" /><div class="gallery-overlay"><span>Doble exposición</span></div></div>
-    <div class="gallery-item reveal" data-cat="ciclismo"><img src="_OZS3413.jpg" loading="lazy" alt="Composición" /><div class="gallery-overlay"><span>Composición</span></div></div>
-    <div class="gallery-item reveal" data-cat="ciclismo"><img src="_OZS3464.jpg" loading="lazy" alt="Ciclismo" /><div class="gallery-overlay"><span>Ciclismo</span></div></div>
-    <div class="gallery-item reveal" data-cat="ciclismo"><img src="_OZS6053.jpg" loading="lazy" alt="Composición" /><div class="gallery-overlay"><span>Composición</span></div></div>
-    <div class="gallery-item reveal" data-cat="ciclismo"><img src="Insta_2_.jpg" loading="lazy" alt="Portafolio" /><div class="gallery-overlay"><span>Portafolio</span></div></div>
-  </div>
-</section>
-    <!-- FÚTBOL -->
-    <!-- FÚTBOL FEMENINO -->
-    <!-- ATLETISMO / DUATLÓN -->
-    <!-- CICLISMO -->
+    <div class="gallery-item" data-cat="ciclismo" style="display:none;"><img src="_OZS4167.jpg" loading="lazy" alt="Ciclismo" /><div class="gallery-overlay"><span>Ciclismo</span></div></div>
+    <div class="gallery-item" data-cat="ciclismo" style="display:none;"><img src="_OZS4522.jpg" loading="lazy" alt="Pelotón" /><div class="gallery-overlay"><span>Pelotón</span></div></div>
+    <div class="gallery-item" data-cat="ciclismo" style="display:none;"><img src="_OZS4830.jpg" loading="lazy" alt="Colombia" /><div class="gallery-overlay"><span>Colombia</span></div></div>
+    <div class="gallery-item" data-cat="ciclismo" style="display:none;"><img src="_OZS4856.jpg" loading="lazy" alt="Hidratación" /><div class="gallery-overlay"><span>Hidratación</span></div></div>
+    <div class="gallery-item" data-cat="ciclismo" style="display:none;"><img src="_OZS3708.jpg" loading="lazy" alt="Panning" /><div class="gallery-overlay"><span>Panning</span></div></div>
+    <div class="gallery-item" data-cat="ciclismo" style="display:none;"><img src="Carrusel.jpg" loading="lazy" alt="Doble exposición" /><div class="gallery-overlay"><span>Doble exposición</span></div></div>
+    <div class="gallery-item" data-cat="ciclismo" style="display:none;"><img src="_OZS3413.jpg" loading="lazy" alt="Composición" /><div class="gallery-overlay"><span>Composición</span></div></div>
+    <div class="gallery-item" data-cat="ciclismo" style="display:none;"><img src="_OZS3464.jpg" loading="lazy" alt="Ciclismo" /><div class="gallery-overlay"><span>Ciclismo</span></div></div>
+    <div class="gallery-item" data-cat="ciclismo" style="display:none;"><img src="_OZS6053.jpg" loading="lazy" alt="Composición" /><div class="gallery-overlay"><span>Composición</span></div></div>
+    <div class="gallery-item" data-cat="ciclismo" style="display:none;"><img src="Insta_2_.jpg" loading="lazy" alt="Portafolio" /><div class="gallery-overlay"><span>Portafolio</span></div></div>
   </div>
 </section>
 
@@ -1059,33 +890,31 @@ footer {
     <p class="contact-sub reveal">
       ¿Tienes un evento deportivo, una campaña o un proyecto editorial? Cuéntame y creamos algo memorable juntos. Basado en Bogotá, disponible en toda Colombia.
     </p>
-    <div class="contact-links reveal" style="margin-top: 36px; display: flex; flex-direction: column; gap: 16px;">
-      <a href="/cdn-cgi/l/email-protection#610e120200131b00130015041109210e14150d0e0e0a4f020e0c" style="display:flex; align-items:center; gap:12px; text-decoration:none; color: var(--light); font-size: 0.85rem; transition: color 0.3s;" onmouseover="this.style.color='#f2f0ec'" onmouseout="this.style.color='#b0aea8'">
-        <span style="color: var(--red); font-size: 1rem;">✉</span>
-        <span class="__cf_email__" data-cfemail="1679657577646c7764776273667e567963627a79797d3875797b">[email&#160;protected]</span>
+    <div class="contact-links reveal">
+      <a href="mailto:oscarzarateph@outlook.com">
+        <span class="icon">✉</span>
+        oscarzarateph@outlook.com
       </a>
-      <a href="https://wa.me/573118131881" target="_blank" style="display:flex; align-items:center; gap:12px; text-decoration:none; color: var(--light); font-size: 0.85rem; transition: color 0.3s;" onmouseover="this.style.color='#f2f0ec'" onmouseout="this.style.color='#b0aea8'">
-        <span style="color: var(--red); font-size: 1rem;">💬</span>
+      <a href="https://wa.me/573118131881" target="_blank">
+        <span class="icon">💬</span>
         +57 311 813 1881
       </a>
     </div>
   </div>
 
   <div class="contact-right reveal">
-    <form id="contactForm" name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="contacto" />
-      <p style="display:none;"><input name="bot-field" /></p>
+    <form id="contactForm" action="https://formspree.io/f/xbdpepgn" method="POST">
       <div class="form-group">
         <label class="form-label">Tu nombre</label>
-        <input type="text" class="form-input" placeholder="Nombre completo" required>
+        <input type="text" name="nombre" class="form-input" placeholder="Nombre completo" required>
       </div>
       <div class="form-group">
         <label class="form-label">Correo electrónico</label>
-        <input type="email" class="form-input" placeholder="tu@correo.com" required>
+        <input type="email" name="email" class="form-input" placeholder="tu@correo.com" required>
       </div>
       <div class="form-group">
         <label class="form-label">¿Cuál es tu proyecto?</label>
-        <textarea class="form-textarea" placeholder="Cuéntame sobre el evento, fecha, deporte..." required></textarea>
+        <textarea name="mensaje" class="form-textarea" placeholder="Cuéntame sobre el evento, fecha, deporte..." required></textarea>
       </div>
       <button type="submit" class="form-submit">Enviar mensaje</button>
     </form>
@@ -1101,14 +930,22 @@ footer {
   <div class="footer-logo">OZS <span style="color:var(--red);font-weight:300;font-size:0.55em;letter-spacing:0.3em;margin-left:6px;">FOTOGRAFÍA DEPORTIVA</span></div>
   <div class="footer-copy">© 2026 · Fotografía Deportiva · Bogotá, Colombia</div>
   <div class="footer-socials">
-    <a href="https://instagram.com/oscarzarateph" target="_blank" style="display:flex;align-items:center;gap:8px;">
+    <a href="https://instagram.com/oscarzarateph" target="_blank">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
       @oscarzarateph
     </a>
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<!-- WhatsApp -->
+<a class="whatsapp-float" href="https://wa.me/573118131881?text=Hola%20Óscar%2C%20vi%20tu%20portafolio%20y%20me%20gustaría%20cotizar%20un%20proyecto" target="_blank" aria-label="Contactar por WhatsApp">
+  <span class="whatsapp-tooltip">Escríbeme</span>
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script>
   // Hamburger menu
   function toggleNav() {
     document.getElementById('navLinks').classList.toggle('open');
@@ -1119,8 +956,7 @@ footer {
     document.getElementById('hamburger').classList.remove('open');
   }
 
-  // Scroll reveal - lower threshold so it triggers earlier
-  const reveals = document.querySelectorAll('.reveal');
+  // Scroll reveal
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
@@ -1130,20 +966,25 @@ footer {
     });
   }, { threshold: 0.05, rootMargin: '0px 0px -50px 0px' });
 
-  reveals.forEach(el => revealObserver.observe(el));
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-  // Form submit - Netlify
-  document.getElementById('contactForm').addEventListener('submit', e => {
+  // Form submit con Formspree
+  document.getElementById('contactForm').addEventListener('submit', async e => {
     e.preventDefault();
-    const form = document.getElementById('contactForm');
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(new FormData(form)).toString()
-    }).finally(() => {
-      form.style.display = 'none';
-      document.getElementById('formSuccess').style.display = 'block';
-    });
+    const form = e.target;
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      }
+    } catch(err) {
+      alert('Hubo un error. Por favor escríbeme a oscarzarateph@outlook.com');
+    }
   });
 
   // Gallery filters
@@ -1153,23 +994,11 @@ footer {
       btn.classList.add('active');
       const filter = btn.dataset.filter;
       document.querySelectorAll('.gallery-item').forEach(item => {
-        if (filter === 'all' || item.dataset.cat === filter) {
-          item.style.display = '';
-        } else {
-          item.style.display = 'none';
-        }
+        item.style.display = item.dataset.cat === filter ? '' : 'none';
       });
     });
   });
-
 </script>
-<!-- WhatsApp Floating Button -->
-<a class="whatsapp-float" href="https://wa.me/573118131881?text=Hola%20Óscar%2C%20vi%20tu%20portafolio%20y%20me%20gustaría%20cotizar%20un%20proyecto" target="_blank" aria-label="Contactar por WhatsApp">
-  <span class="whatsapp-tooltip">Escríbeme</span>
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-  </svg>
-</a>
 
 </body>
 </html>
