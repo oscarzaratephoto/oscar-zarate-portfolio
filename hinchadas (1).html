@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fotos Hinchada América de Cali — Descarga Gratis · Óscar Zárate</title>
+<meta name="description" content="Fotos gratis de la hinchada del América de Cali. Descarga tu foto de la tribuna. Fotografía deportiva por Óscar Zárate.">
+<meta name="keywords" content="fotos hinchada América de Cali, fotos tribuna América, descargar fotos América de Cali gratis, fotografía fútbol Colombia">
+<meta property="og:title" content="Fotos Hinchada América de Cali — Descarga Gratis">
+<meta property="og:description" content="¿Estuviste en la tribuna? Encuentra tu foto y descárgala gratis.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23080808'/><text y='.9em' font-size='80' x='10'>📷</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ImageGallery","name":"Fotos Hinchada América de Cali","description":"Fotos gratuitas de la hinchada del América de Cali por Óscar Zárate","author":{"@type":"Person","name":"Óscar Zárate","url":"https://oscarzarateph.github.io"}}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--black:#080808;--white:#f2f0ec;--red:#e8251a;--red-dim:#9e1a11;--gray:#2a2a2a;--mid:#6a6a6a;--light:#b0aea8;}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;font-weight:300;overflow-x:hidden;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:20px 48px;display:flex;justify-content:space-between;align-items:center;background:rgba(8,8,8,0.9);backdrop-filter:blur(8px);}
+.nav-logo{font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;font-weight:900;letter-spacing:0.1em;color:var(--white);text-decoration:none;}
+.nav-back{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--light);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color 0.3s;}
+.nav-back:hover{color:var(--red);}
+@media(max-width:768px){nav{padding:16px 24px;}}
+
+.page-hero{padding:160px 48px 80px;border-bottom:1px solid var(--gray);}
+@media(max-width:768px){.page-hero{padding:120px 24px 60px;}}
+.page-eyebrow{font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--red);margin-bottom:16px;}
+.page-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(3rem,8vw,6rem);line-height:0.92;margin-bottom:24px;}
+.page-title span{color:var(--red);}
+.page-desc{font-size:0.92rem;line-height:1.75;color:var(--light);max-width:560px;}
+
+/* PARTIDO SELECTOR */
+.partido-selector{padding:48px 48px 0;}
+@media(max-width:768px){.partido-selector{padding:40px 24px 0;}}
+.partido-selector h3{font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-bottom:16px;}
+.partidos-list{display:flex;gap:8px;flex-wrap:wrap;}
+.partido-btn{background:transparent;border:1px solid var(--gray);color:var(--mid);padding:8px 20px;font-family:'Barlow',sans-serif;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;transition:all 0.3s ease;}
+.partido-btn:hover,.partido-btn.active{border-color:var(--red);color:var(--white);background:var(--red);}
+
+/* GALLERY GRID */
+.gallery-section{padding:48px 48px 80px;}
+@media(max-width:768px){.gallery-section{padding:40px 24px 60px;}}
+.photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;}
+@media(max-width:768px){.photo-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.photo-grid{grid-template-columns:1fr;}}
+
+.photo-card{position:relative;overflow:hidden;background:var(--gray);aspect-ratio:1;}
+.photo-card img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.8);transition:transform 0.5s ease,filter 0.5s ease;}
+.photo-card:hover img{transform:scale(1.05);filter:brightness(0.5);}
+.photo-actions{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;opacity:0;transition:opacity 0.3s ease;}
+.photo-card:hover .photo-actions{opacity:1;}
+.btn-download{background:var(--red);color:var(--white);padding:10px 24px;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;font-family:'Barlow',sans-serif;font-weight:500;display:flex;align-items:center;gap:8px;transition:background 0.3s ease;}
+.btn-download:hover{background:var(--red-dim);}
+.btn-download svg{width:14px;height:14px;fill:white;}
+.photo-label{font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--light);}
+
+/* EMPTY STATE */
+.empty-state{text-align:center;padding:80px 24px;color:var(--mid);}
+.empty-state p{font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;margin-bottom:8px;color:var(--light);}
+.empty-state span{font-size:0.82rem;}
+
+/* CTA BOTTOM */
+.cta-bottom{padding:80px 48px;border-top:1px solid var(--gray);text-align:center;}
+@media(max-width:768px){.cta-bottom{padding:60px 24px;}}
+.cta-bottom h3{font-family:'Barlow Condensed',sans-serif;font-size:2rem;margin-bottom:12px;}
+.cta-bottom p{font-size:0.88rem;color:var(--light);margin-bottom:28px;}
+.cta-bottom a{background:var(--red);color:var(--white);padding:14px 32px;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;font-family:'Barlow',sans-serif;font-weight:500;display:inline-block;transition:background 0.3s;}
+.cta-bottom a:hover{background:var(--red-dim);}
+
+footer{padding:32px 48px;border-top:1px solid var(--gray);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:'Barlow Condensed',sans-serif;font-size:1rem;letter-spacing:0.15em;color:var(--white);}
+.footer-copy{font-size:0.72rem;color:var(--mid);}
+@media(max-width:768px){footer{flex-direction:column;text-align:center;padding:24px;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">OZS <span style="color:var(--red);font-weight:300;font-size:0.6em;letter-spacing:0.3em;margin-left:8px;">FOTOGRAFÍA DEPORTIVA</span></a>
+  <a href="index.html" class="nav-back">← Volver al inicio</a>
+</nav>
+
+<div class="page-hero">
+  <p class="page-eyebrow">Descarga gratis · América de Cali</p>
+  <h1 class="page-title">FOTOS DE<br>LA <span>HINCHADA</span></h1>
+  <p class="page-desc">¿Estuviste en la tribuna? Encuentra tu foto y descárgala gratis. Selecciona el partido y busca tu imagen.</p>
+</div>
+
+<div class="partido-selector">
+  <h3>Selecciona el partido</h3>
+  <div class="partidos-list" id="partidosList">
+    <!-- =====================================================
+    CÓMO AGREGAR UN NUEVO PARTIDO:
+    1. Copia esta línea y pégala aquí:
+    <button class="partido-btn" data-partido="NOMBRE-PARTIDO" onclick="filtrarPartido(this)">Nombre del Partido</button>
+    2. En la galería agrega tus fotos con data-partido="NOMBRE-PARTIDO"
+    ===================================================== -->
+    <button class="partido-btn active" data-partido="todos" onclick="filtrarPartido(this)">Todos</button>
+    <!-- Agrega aquí los partidos -->
+  </div>
+</div>
+
+<div class="gallery-section">
+  <div class="photo-grid" id="photoGrid">
+
+    <!-- =====================================================
+    CÓMO AGREGAR FOTOS:
+    Copia este bloque y cambia:
+    - data-partido="nombre-partido" (debe coincidir con el botón)
+    - src="tu-foto.jpg"
+    - download="nombre-descarga.jpg"
+    - El texto del label (opcional)
+
+    <div class="photo-card" data-partido="america-vs-equipo">
+      <img src="tu-foto.jpg" loading="lazy" alt="Hinchada América de Cali"/>
+      <div class="photo-actions">
+        <a href="tu-foto.jpg" download="OZS-hinchada-america.jpg" class="btn-download">
+          <svg viewBox="0 0 24 24"><path d="M12 16l-6-6h4V4h4v6h4l-6 6zm-6 2h12v2H6v-2z"/></svg>
+          Descargar gratis
+        </a>
+        <span class="photo-label">📷 Óscar Zárate</span>
+      </div>
+    </div>
+    ===================================================== -->
+
+    <div class="empty-state" id="emptyState" style="grid-column:1/-1;">
+      <p>Próximamente</p>
+      <span>Las fotos del próximo partido estarán disponibles aquí</span>
+    </div>
+
+  </div>
+</div>
+
+<div class="cta-bottom">
+  <h3>¿QUIERES TU EVENTO FOTOGRAFIADO?</h3>
+  <p>Cubro partidos, maratones, ciclismo y más en toda Colombia.</p>
+  <a href="index.html#contacto">Cotiza tu cobertura →</a>
+</div>
+
+<footer>
+  <div class="footer-logo">OZS <span style="color:var(--red);font-weight:300;font-size:0.55em;letter-spacing:0.3em;margin-left:6px;">FOTOGRAFÍA DEPORTIVA</span></div>
+  <div class="footer-copy">© 2026 · Óscar Zárate · Bogotá, Colombia</div>
+</footer>
+
+<script>
+function filtrarPartido(btn) {
+  document.querySelectorAll('.partido-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const partido = btn.dataset.partido;
+  const fotos = document.querySelectorAll('.photo-card');
+  let visibles = 0;
+  fotos.forEach(foto => {
+    if (partido === 'todos' || foto.dataset.partido === partido) {
+      foto.style.display = '';
+      visibles++;
+    } else {
+      foto.style.display = 'none';
+    }
+  });
+  document.getElementById('emptyState').style.display = visibles === 0 ? 'block' : 'none';
+}
+</script>
+</body>
+</html>
