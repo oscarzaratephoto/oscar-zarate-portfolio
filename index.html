@@ -151,6 +151,21 @@ footer{padding:32px 48px;border-top:1px solid var(--gray);display:flex;justify-c
 .event-btn:hover{background:var(--red-dim);}
 @media(max-width:768px){.events-float{bottom:90px;right:12px;left:12px;max-width:100%;}.event-card{padding:14px 16px;}}
 
+
+/* HINCHADAS BANNER */
+.hinchadas-banner{padding:80px 48px;border-top:1px solid var(--gray);display:grid;grid-template-columns:1fr 1fr;gap:0;overflow:hidden;}
+@media(max-width:768px){.hinchadas-banner{grid-template-columns:1fr;padding:60px 24px;}}
+.hinchadas-left{background:var(--red);padding:56px 48px;display:flex;flex-direction:column;justify-content:center;}
+@media(max-width:768px){.hinchadas-left{padding:40px 28px;}}
+.hinchadas-eyebrow{font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(242,240,236,0.7);margin-bottom:16px;}
+.hinchadas-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2.5rem,5vw,4rem);line-height:0.95;margin-bottom:20px;}
+.hinchadas-desc{font-size:0.88rem;line-height:1.75;color:rgba(242,240,236,0.8);margin-bottom:32px;max-width:380px;}
+.hinchadas-btn{background:var(--white);color:var(--black);padding:14px 28px;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;font-family:'Barlow',sans-serif;font-weight:700;display:inline-block;transition:transform 0.2s ease;width:fit-content;}
+.hinchadas-btn:hover{transform:translateY(-2px);}
+.hinchadas-right{background:var(--gray);min-height:320px;position:relative;overflow:hidden;}
+.hinchadas-right img{width:100%;height:100%;object-fit:cover;filter:brightness(0.6);}
+.hinchadas-right-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(232,37,26,0.3),transparent);}
+
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
 .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.8s ease,transform 0.8s ease;}
 .reveal.visible{opacity:1;transform:none;}
@@ -164,6 +179,7 @@ footer{padding:32px 48px;border-top:1px solid var(--gray);display:flex;justify-c
     <li><a href="#galeria" onclick="closeNav()">Trabajo</a></li>
     <li><a href="#servicios" onclick="closeNav()">Servicios</a></li>
     <li><a href="#sobre-mi" onclick="closeNav()">Sobre mí</a></li>
+    <li><a href="hinchadas.html">Hinchada</a></li>
     <li><a href="#contacto" onclick="closeNav()">Contacto</a></li>
   </ul>
   <button class="nav-hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menú">
@@ -175,6 +191,7 @@ footer{padding:32px 48px;border-top:1px solid var(--gray);display:flex;justify-c
   <a href="#galeria" onclick="closeNav()">Trabajo</a>
   <a href="#servicios" onclick="closeNav()">Servicios</a>
   <a href="#sobre-mi" onclick="closeNav()">Sobre mí</a>
+  <a href="hinchadas.html">Hinchada</a>
   <a href="#contacto" onclick="closeNav()">Contacto</a>
 </div>
 
@@ -325,6 +342,20 @@ footer{padding:32px 48px;border-top:1px solid var(--gray);display:flex;justify-c
   </div>
 </footer>
 
+<!-- HINCHADAS -->
+<section class="hinchadas-banner reveal">
+  <div class="hinchadas-left">
+    <p class="hinchadas-eyebrow">Descarga gratis · América de Cali</p>
+    <h2 class="hinchadas-title">FOTOS DE<br>LA HINCHADA</h2>
+    <p class="hinchadas-desc">¿Estuviste en la tribuna? Encuentra tu foto y descárgala completamente gratis.</p>
+    <a href="hinchadas.html" class="hinchadas-btn">Ver fotos gratis →</a>
+  </div>
+  <div class="hinchadas-right">
+    <img src="OZS_9436.jpg" loading="lazy" alt="Hinchada América de Cali"/>
+    <div class="hinchadas-right-overlay"></div>
+  </div>
+</section>
+
 <!-- WHATSAPP -->
 <a class="whatsapp-float" href="https://wa.me/573118131881?text=Hola%20Óscar%2C%20vi%20tu%20portafolio%20y%20me%20gustaría%20cotizar%20un%20proyecto" target="_blank" aria-label="WhatsApp">
   <span class="whatsapp-tooltip">Escríbeme</span>
@@ -348,7 +379,8 @@ footer{padding:32px 48px;border-top:1px solid var(--gray);display:flex;justify-c
 </div>
 
 <script>
-
+function toggleNav(){document.getElementById('navOverlay').classList.toggle('open');document.getElementById('hamburger').classList.toggle('open');}
+function closeNav(){document.getElementById('navOverlay').classList.remove('open');document.getElementById('hamburger').classList.remove('open');}
 
 const revealObserver=new IntersectionObserver((entries)=>{entries.forEach((entry,i)=>{if(entry.isIntersecting){setTimeout(()=>entry.target.classList.add('visible'),i*60);revealObserver.unobserve(entry.target);}});},{threshold:0.05,rootMargin:'0px 0px -50px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
