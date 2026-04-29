@@ -138,18 +138,23 @@ footer{padding:32px 48px;border-top:1px solid var(--gray);display:flex;justify-c
 .whatsapp-tooltip{position:absolute;right:64px;background:var(--black);color:var(--white);padding:6px 12px;font-size:0.7rem;letter-spacing:0.1em;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity 0.3s ease;border:1px solid var(--gray);}
 .whatsapp-float:hover .whatsapp-tooltip{opacity:1;}
 
-/* EVENTOS FLOTANTES */
-.events-float{position:fixed;bottom:100px;right:28px;z-index:7000;display:flex;flex-direction:column;gap:10px;max-width:280px;}
-.event-card{background:rgba(8,8,8,0.95);border:1px solid var(--red);padding:16px 18px 16px 18px;position:relative;box-shadow:0 8px 32px rgba(0,0,0,0.7);animation:slideIn 0.5s ease forwards;opacity:0;}
-.event-card:nth-child(2){animation-delay:0.15s;}
-@keyframes slideIn{from{opacity:0;transform:translateX(30px);}to{opacity:1;transform:translateX(0);}}
-.event-close{position:absolute;top:8px;right:10px;background:none;border:none;color:var(--mid);font-size:0.85rem;cursor:pointer;line-height:1;padding:2px 4px;transition:color 0.2s;}
-.event-close:hover{color:var(--white);}
-.event-tag{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:6px;}
-.event-name{font-family:'Barlow Condensed',sans-serif;font-size:1rem;letter-spacing:0.04em;line-height:1.25;margin-bottom:12px;padding-right:16px;color:var(--white);}
-.event-btn{display:inline-block;background:var(--red);color:var(--white);padding:7px 16px;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;font-family:'Barlow',sans-serif;font-weight:500;transition:background 0.3s ease;}
-.event-btn:hover{background:var(--red-dim);}
-@media(max-width:768px){.events-float{bottom:90px;right:12px;left:12px;max-width:100%;}.event-card{padding:14px 16px;}}
+
+
+
+/* HINCHADAS BANNER */
+.hinchadas-banner{border-top:1px solid var(--gray);display:grid;grid-template-columns:1fr 1fr;overflow:hidden;}
+@media(max-width:768px){.hinchadas-banner{grid-template-columns:1fr;}}
+.hinchadas-left{background:var(--red);padding:80px 48px;display:flex;flex-direction:column;justify-content:center;}
+@media(max-width:768px){.hinchadas-left{padding:60px 24px;}}
+.hinchadas-eyebrow{font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(242,240,236,0.7);margin-bottom:16px;}
+.hinchadas-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2.5rem,5vw,4rem);line-height:0.95;margin-bottom:20px;}
+.hinchadas-desc{font-size:0.88rem;line-height:1.75;color:rgba(242,240,236,0.8);margin-bottom:32px;max-width:380px;}
+.hinchadas-btn{background:var(--white);color:var(--black);padding:14px 28px;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;font-family:'Barlow',sans-serif;font-weight:700;display:inline-block;transition:transform 0.2s ease;width:fit-content;}
+.hinchadas-btn:hover{transform:translateY(-2px);}
+.hinchadas-right{min-height:400px;position:relative;overflow:hidden;}
+.hinchadas-right img{width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(0.6);}
+.hinchadas-right-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(232,37,26,0.4),transparent);}
+@media(max-width:768px){.hinchadas-right{min-height:280px;}}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
 .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.8s ease,transform 0.8s ease;}
@@ -166,6 +171,7 @@ footer{padding:32px 48px;border-top:1px solid var(--gray);display:flex;justify-c
     <li><a href="#galeria" onclick="closeNav()">Trabajo</a></li>
     <li><a href="#servicios" onclick="closeNav()">Servicios</a></li>
     <li><a href="#sobre-mi" onclick="closeNav()">Sobre mí</a></li>
+    <li><a href="hinchadas.html">Hinchada</a></li>
     <li><a href="#contacto" onclick="closeNav()">Contacto</a></li>
   </ul>
   <button class="nav-hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menú">
@@ -177,6 +183,7 @@ footer{padding:32px 48px;border-top:1px solid var(--gray);display:flex;justify-c
   <a href="#galeria" onclick="closeNav()">Trabajo</a>
   <a href="#servicios" onclick="closeNav()">Servicios</a>
   <a href="#sobre-mi" onclick="closeNav()">Sobre mí</a>
+  <a href="hinchadas.html">Hinchada</a>
   <a href="#contacto" onclick="closeNav()">Contacto</a>
 </div>
 
@@ -327,19 +334,26 @@ footer{padding:32px 48px;border-top:1px solid var(--gray);display:flex;justify-c
   </div>
 </footer>
 
+<!-- HINCHADAS -->
+<section class="hinchadas-banner" id="hinchada">
+  <div class="hinchadas-left reveal">
+    <p class="hinchadas-eyebrow">📸 Descarga gratis · América de Cali</p>
+    <h2 class="hinchadas-title">FOTOS DE<br>LA HINCHADA</h2>
+    <p class="hinchadas-desc">¿Estuviste en la tribuna del América? Encuentra tu foto y descárgala completamente gratis.</p>
+    <a href="hinchadas.html" class="hinchadas-btn">Ver fotos gratis →</a>
+  </div>
+  <div class="hinchadas-right">
+    <img src="OZS_9238.jpg" loading="lazy" alt="Hinchada América de Cali"/>
+    <div class="hinchadas-right-overlay"></div>
+  </div>
+</section>
+
 <!-- WHATSAPP -->
 <a class="whatsapp-float" href="https://wa.me/573118131881?text=Hola%20Óscar%2C%20vi%20tu%20portafolio%20y%20me%20gustaría%20cotizar%20un%20proyecto" target="_blank" aria-label="WhatsApp">
   <span class="whatsapp-tooltip">Escríbeme</span>
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
-  <div class="event-card" id="event2">
-    <button class="event-close" onclick="document.getElementById('event2').remove()" aria-label="Cerrar">✕</button>
-    <p class="event-tag">📸 Fotos disponibles</p>
-    <p class="event-name">Travesía Bogotá — Villavicencio</p>
-    <a href="https://velocidadenfoco.com/fotos/eventos/busca/evento/264222/rc/1" target="_blank" class="event-btn">Ver mis fotos →</a>
-  </div>
-</div>
 
 <script>
 function toggleNav(){document.getElementById('navOverlay').classList.toggle('open');document.getElementById('hamburger').classList.toggle('open');}
