@@ -17,6 +17,7 @@
 <meta name="twitter:title" content="Óscar Zárate — Fotografía Deportiva">
 <meta name="twitter:image" content="OZS_0755-2.jpg">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23080808'/><text y='.9em' font-size='80' x='10'>📷</text></svg>">
+<link rel="canonical" href="https://www.oscarzarateph.com/">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -104,6 +105,26 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:20px 48px;display:fl
 .gallery-overlay span{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--white);opacity:0;transform:translateY(6px);transition:opacity 0.3s ease,transform 0.3s ease;text-shadow:0 1px 4px rgba(0,0,0,0.8);}
 .gallery-item:hover .gallery-overlay span{opacity:1;transform:translateY(0);}
 
+.cotizacion{padding:120px 48px;border-top:1px solid var(--gray);}
+.cotizacion-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.cotizacion-text{font-size:0.92rem;line-height:1.85;color:var(--light);margin-bottom:32px;max-width:480px;}
+.cotizacion-includes{display:flex;flex-direction:column;gap:18px;}
+.cotizacion-item{display:flex;gap:16px;align-items:flex-start;}
+.cotizacion-item .num{font-family:'Barlow Condensed',sans-serif;color:var(--red);font-size:1.4rem;line-height:1;flex-shrink:0;}
+.cotizacion-item p{font-size:0.85rem;line-height:1.6;color:var(--light);}
+.cotizacion-item p strong{color:var(--white);font-weight:500;}
+@media(max-width:768px){.cotizacion{padding:80px 24px;}.cotizacion-grid{grid-template-columns:1fr;gap:40px;}}
+
+.faq{padding:120px 48px;border-top:1px solid var(--gray);}
+.faq-list{max-width:820px;}
+.faq-item{border-bottom:1px solid var(--gray);}
+.faq-item summary{list-style:none;cursor:pointer;padding:26px 0;display:flex;justify-content:space-between;align-items:center;gap:24px;font-family:'Barlow Condensed',sans-serif;font-size:1.15rem;letter-spacing:0.01em;color:var(--white);}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary .plus{font-size:1.4rem;color:var(--red);transition:transform 0.3s ease;flex-shrink:0;}
+.faq-item[open] summary .plus{transform:rotate(45deg);}
+.faq-item .faq-answer{padding:0 0 26px;font-size:0.86rem;line-height:1.8;color:var(--light);max-width:680px;}
+@media(max-width:768px){.faq{padding:80px 24px;}.faq-item summary{font-size:1rem;}}
+
 .contact{padding:120px 48px;border-top:1px solid var(--gray);display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
 .contact-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(3rem,6vw,5.5rem);line-height:0.92;letter-spacing:0.02em;}
 .contact-title span{color:var(--red);display:block;}
@@ -153,6 +174,7 @@ footer{padding:32px 48px;border-top:1px solid var(--gray);display:flex;justify-c
     <li><a href="#galeria" onclick="closeNav()">Trabajo</a></li>
     <li><a href="#servicios" onclick="closeNav()">Servicios</a></li>
     <li><a href="#sobre-mi" onclick="closeNav()">Sobre mí</a></li>
+    <li><a href="#faq" onclick="closeNav()">FAQ</a></li>
     <li><a href="hinchadas.html">Hinchada</a></li>
     <li><a href="#contacto" onclick="closeNav()">Contacto</a></li>
   </ul>
@@ -165,6 +187,7 @@ footer{padding:32px 48px;border-top:1px solid var(--gray);display:flex;justify-c
   <a href="#galeria" onclick="closeNav()">Trabajo</a>
   <a href="#servicios" onclick="closeNav()">Servicios</a>
   <a href="#sobre-mi" onclick="closeNav()">Sobre mí</a>
+  <a href="#faq" onclick="closeNav()">FAQ</a>
   <a href="hinchadas.html">Hinchada</a>
   <a href="#contacto" onclick="closeNav()">Contacto</a>
 </div>
@@ -208,12 +231,12 @@ footer{padding:32px 48px;border-top:1px solid var(--gray);display:flex;justify-c
     <span class="section-count">06</span>
   </div>
   <div class="services-grid">
-    <div class="service-item reveal"><div class="service-icon">🏟️</div><div class="service-name">Cobertura de partidos</div><div class="service-desc">Cobertura completa de partidos de fútbol — desde el calentamiento hasta el pitazo final. Entrego imágenes el mismo día.</div></div>
-    <div class="service-item reveal"><div class="service-icon">🏃</div><div class="service-name">Eventos de atletismo</div><div class="service-desc">Maratones, duatlones y competencias de pista. Capturo a cada atleta en su mejor momento, con enfoque en la emoción y el esfuerzo.</div></div>
-    <div class="service-item reveal"><div class="service-icon">🚴</div><div class="service-name">Ciclismo y ruta</div><div class="service-desc">Etapas, criteriums y rutas. Manejo técnicas de panning y acción para transmitir velocidad real en cada imagen.</div></div>
-    <div class="service-item reveal"><div class="service-icon">👤</div><div class="service-name">Sesión de atleta</div><div class="service-desc">Sesión individual o grupal para deportistas que quieren construir su imagen personal y presencia en redes sociales.</div></div>
-    <div class="service-item reveal"><div class="service-icon">📱</div><div class="service-name">Contenido para redes</div><div class="service-desc">Fotos y ediciones optimizadas para Instagram, TikTok y otras plataformas. Formato vertical, horizontal y cuadrado.</div></div>
-    <div class="service-item reveal"><div class="service-icon">🏢</div><div class="service-name">Fotografía corporativa deportiva</div><div class="service-desc">Para clubes, marcas deportivas y organizadores de eventos que necesitan imágenes profesionales para comunicaciones y prensa.</div></div>
+    <div class="service-item reveal"><div class="service-icon">🏟️</div><div class="service-name">Cobertura de partidos</div><div class="service-desc">Desde el calentamiento hasta el pitazo final: acción, banca, hinchada y los detalles que cuentan la historia completa del partido. Selección editada y entregada el mismo día, lista para prensa y redes.</div></div>
+    <div class="service-item reveal"><div class="service-icon">🏃</div><div class="service-name">Eventos de atletismo</div><div class="service-desc">Maratones, duatlones, trail y pista. Cubro salida, puntos clave del recorrido y meta, con foco en la emoción real de cada corredor — el material perfecto para que los organizadores lo compartan con los participantes.</div></div>
+    <div class="service-item reveal"><div class="service-icon">🚴</div><div class="service-name">Ciclismo y ruta</div><div class="service-desc">Etapas, criteriums, fondos y travesías de larga distancia. Panning y seguimiento en movimiento para transmitir velocidad real, más tomas de pelotón, escapes y paisaje de la ruta colombiana.</div></div>
+    <div class="service-item reveal"><div class="service-icon">👤</div><div class="service-name">Sesión de atleta</div><div class="service-desc">Sesiones individuales o de equipo pensadas para construir marca personal: portafolio para patrocinadores, imagen de perfil profesional y contenido que te distingue dentro de tu disciplina.</div></div>
+    <div class="service-item reveal"><div class="service-icon">📱</div><div class="service-name">Contenido para redes</div><div class="service-desc">Edición optimizada para Instagram, TikTok y demás plataformas, en vertical, horizontal y cuadrado — entrega rápida pensada para que publiques mientras el momento sigue caliente.</div></div>
+    <div class="service-item reveal"><div class="service-icon">🏢</div><div class="service-name">Fotografía corporativa deportiva</div><div class="service-desc">Para clubes, marcas y organizadores de eventos que necesitan imágenes de calidad editorial para prensa, patrocinadores, redes y reportes internos, con entrega ágil y derechos de uso claros.</div></div>
   </div>
 </section>
 
@@ -221,7 +244,7 @@ footer{padding:32px 48px;border-top:1px solid var(--gray);display:flex;justify-c
   <div class="gallery-header">
     <div class="section-header reveal">
       <div><p class="section-tag">Portafolio</p><h2 class="section-title">EL TRABAJO</h2></div>
-      <span class="section-count">47+</span>
+      <span class="section-count">69+</span>
     </div>
   </div>
   <div class="gallery-filters">
@@ -282,7 +305,13 @@ footer{padding:32px 48px;border-top:1px solid var(--gray);display:flex;justify-c
     <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5436.jpg" loading="lazy" alt="Atletismo"/><div class="gallery-overlay"><span>Atletismo</span></div></div>
     <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5497.jpg" loading="lazy" alt="Carrera"/><div class="gallery-overlay"><span>Carrera</span></div></div>
     <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5512.jpg" loading="lazy" alt="Foco"/><div class="gallery-overlay"><span>Foco</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5559_copia.jpg" loading="lazy" alt="Duatlón"/><div class="gallery-overlay"><span>Duatlón</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5559.jpg" loading="lazy" alt="Duatlón"/><div class="gallery-overlay"><span>Duatlón</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="OZS_running_puno.jpg" loading="lazy" alt="Corredora celebrando"/><div class="gallery-overlay"><span>Fuerza</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="OZS_running_beso.jpg" loading="lazy" alt="Corredora enviando un beso"/><div class="gallery-overlay"><span>Alegría</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="OZS_running_victoria.jpg" loading="lazy" alt="Corredora haciendo señal de victoria"/><div class="gallery-overlay"><span>Victoria</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="OZS_running_saludo.jpg" loading="lazy" alt="Corredor con bandera de Colombia"/><div class="gallery-overlay"><span>Orgullo</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="OZS_running_grupo.jpg" loading="lazy" alt="Grupo de corredores celebrando"/><div class="gallery-overlay"><span>Equipo</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="OZS_running_bandera.jpg" loading="lazy" alt="Corredor con capa tricolor"/><div class="gallery-overlay"><span>Patria</span></div></div>
     <div class="gallery-item" data-cat="ciclismo" style="display:none;"><img src="_OZS4167.jpg" loading="lazy" alt="Ciclismo"/><div class="gallery-overlay"><span>Ciclismo</span></div></div>
     <div class="gallery-item" data-cat="ciclismo" style="display:none;"><img src="_OZS4522.jpg" loading="lazy" alt="Pelotón"/><div class="gallery-overlay"><span>Pelotón</span></div></div>
     <div class="gallery-item" data-cat="ciclismo" style="display:none;"><img src="_OZS4830.jpg" loading="lazy" alt="Colombia"/><div class="gallery-overlay"><span>Colombia</span></div></div>
@@ -303,6 +332,49 @@ footer{padding:32px 48px;border-top:1px solid var(--gray);display:flex;justify-c
     <h2 class="hinchadas-title">FOTOS DE<br>LA HINCHADA</h2>
     <p class="hinchadas-desc">¿Estuviste en la tribuna del América? Encuentra tu foto y descárgala completamente gratis.</p>
     <a href="hinchadas.html" class="hinchadas-btn">Ver fotos gratis →</a>
+  </div>
+</section>
+
+<section class="cotizacion" id="cotizacion">
+  <div class="section-header reveal">
+    <div><p class="section-tag">Inversión</p><h2 class="section-title">CADA EVENTO<br>ES DISTINTO</h2></div>
+  </div>
+  <div class="cotizacion-grid">
+    <p class="cotizacion-text reveal">No trabajo con tarifas de catálogo porque ningún partido, maratón o sesión es igual a otro: la duración, el número de atletas, la ubicación y el uso que le darás a las fotos cambian el alcance. Cuéntame los detalles de tu evento y te envío una cotización clara en menos de 24 horas — sin letra pequeña.</p>
+    <div class="cotizacion-includes reveal">
+      <div class="cotizacion-item"><span class="num">01</span><p><strong>Cotización sin costo</strong> — respondo por WhatsApp o correo con un presupuesto ajustado a tu evento.</p></div>
+      <div class="cotizacion-item"><span class="num">02</span><p><strong>Entrega digital en alta resolución</strong> — imágenes editadas, listas para imprimir o publicar.</p></div>
+      <div class="cotizacion-item"><span class="num">03</span><p><strong>Derechos de uso claros</strong> — sabes exactamente para qué puedes usar cada foto desde el primer momento.</p></div>
+      <div class="cotizacion-item"><span class="num">04</span><p><strong>Anticipo del 50%</strong> para reservar la fecha, saldo contra entrega del material.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="section-header reveal">
+    <div><p class="section-tag">Preguntas frecuentes</p><h2 class="section-title">ANTES DE<br>ESCRIBIRME</h2></div>
+  </div>
+  <div class="faq-list">
+    <details class="faq-item reveal">
+      <summary>¿Cuánto tardas en entregar las fotos?<span class="plus">+</span></summary>
+      <div class="faq-answer">Para cobertura de partidos entrego una selección editada el mismo día. Para maratones, ciclismo y sesiones más grandes, el tiempo habitual es de 2 a 5 días hábiles según el volumen de imágenes.</div>
+    </details>
+    <details class="faq-item reveal">
+      <summary>¿Puedo usar las fotos en redes sociales y prensa?<span class="plus">+</span></summary>
+      <div class="faq-answer">Sí. Al confirmar el proyecto acordamos por escrito el uso que necesitas (redes, prensa, patrocinadores, impresión) para que quede claro desde el inicio, sin sorpresas de licencias.</div>
+    </details>
+    <details class="faq-item reveal">
+      <summary>¿Viajas fuera de Bogotá para cubrir eventos?<span class="plus">+</span></summary>
+      <div class="faq-answer">Sí, cubro eventos en toda Colombia. Solo suma el costo de desplazamiento y hospedaje cuando aplique, y lo incluyo desde la primera cotización para que no haya costos ocultos.</div>
+    </details>
+    <details class="faq-item reveal">
+      <summary>¿Cómo reservo una fecha?<span class="plus">+</span></summary>
+      <div class="faq-answer">Escríbeme por WhatsApp o el formulario con la fecha, el lugar y el tipo de evento. Confirmamos alcance y precio, y la fecha queda apartada con un anticipo del 50%.</div>
+    </details>
+    <details class="faq-item reveal">
+      <summary>¿Entregas también las fotos sin editar?<span class="plus">+</span></summary>
+      <div class="faq-answer">La entrega estándar es la selección ya editada y en alta resolución — es lo que garantiza la calidad de mi trabajo. Si tu proyecto necesita el material en bruto, lo conversamos como un alcance aparte.</div>
+    </details>
   </div>
 </section>
 
@@ -328,7 +400,7 @@ footer{padding:32px 48px;border-top:1px solid var(--gray);display:flex;justify-c
 
 <footer>
   <div class="footer-logo">OZS <span style="color:var(--red);font-weight:300;font-size:0.55em;letter-spacing:0.3em;margin-left:6px;">FOTOGRAFÍA DEPORTIVA</span></div>
-  <div class="footer-copy">© 2026 · Fotografía Deportiva · Bogotá, Colombia</div>
+  <div class="footer-copy">© <span id="year">2026</span> · Fotografía Deportiva · Bogotá, Colombia</div>
   <div class="footer-socials">
     <a href="https://instagram.com/oscarzarateph" target="_blank">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
@@ -354,6 +426,8 @@ document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
 document.getElementById('contactForm').addEventListener('submit',async function(e){e.preventDefault();try{const res=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}});if(res.ok){this.style.display='none';document.getElementById('formSuccess').style.display='block';}}catch(err){alert('Error. Escríbeme a oscarzarateph@outlook.com');}});
 
 document.querySelectorAll('.filter-btn').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const filter=btn.dataset.filter;document.querySelectorAll('.gallery-item').forEach(item=>{item.style.display=item.dataset.cat===filter?'':'none';});});});
+
+document.getElementById('year').textContent=new Date().getFullYear();
 </script>
 </body>
 </html>
