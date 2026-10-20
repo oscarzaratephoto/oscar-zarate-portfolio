@@ -3,21 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Óscar Zárate — Fotografía Deportiva Colombia</title>
+<title>Óscar Zárate | Fotógrafo Deportivo en Bogotá y Colombia</title>
 <meta name="description" content="Fotógrafo deportivo acreditado por la Dimayor para Fortaleza FC en la Liga BetPlay. Especialista en fútbol, atletismo y ciclismo en Colombia.">
 <meta name="keywords" content="fotografía deportiva Colombia, fotógrafo Dimayor, fotógrafo Fortaleza FC, Liga BetPlay, fútbol profesional Colombia, Óscar Zárate, fotografía deportiva Bogotá">
 <meta name="author" content="Óscar Zárate">
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="Óscar Zárate — Fotografía Deportiva">
 <meta property="og:description" content="Capturo el esfuerzo, la emoción y la historia humana detrás del deporte.">
-<meta property="og:image" content="OZS_0755-2.jpg">
+<meta property="og:url" content="https://www.oscarzarateph.com/">
+<meta property="og:site_name" content="Óscar Zárate — Fotografía Deportiva">
+<meta property="og:image" content="https://www.oscarzarateph.com/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Jugador celebrando un gol — fotografía deportiva de Óscar Zárate">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_CO">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Óscar Zárate — Fotografía Deportiva">
-<meta name="twitter:image" content="OZS_0755-2.jpg">
+<meta name="twitter:description" content="Capturo el esfuerzo, la emoción y la historia humana detrás del deporte.">
+<meta name="twitter:image" content="https://www.oscarzarateph.com/og-cover.jpg">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23080808'/><text y='.9em' font-size='80' x='10'>📷</text></svg>">
 <link rel="canonical" href="https://www.oscarzarateph.com/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.oscarzarateph.com/#website",
+      "url": "https://www.oscarzarateph.com/",
+      "name": "Óscar Zárate — Fotografía Deportiva",
+      "inLanguage": "es-CO"
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.oscarzarateph.com/#business",
+      "name": "Óscar Zárate — Fotografía Deportiva",
+      "description": "Fotógrafo deportivo acreditado por la Dimayor para Fortaleza FC en la Liga BetPlay. Especialista en fútbol, atletismo y ciclismo en Colombia.",
+      "url": "https://www.oscarzarateph.com/",
+      "image": "https://www.oscarzarateph.com/og-cover.jpg",
+      "email": "oscarzarateph@outlook.com",
+      "telephone": "+573118131881",
+      "address": {"@type": "PostalAddress", "addressLocality": "Bogotá", "addressCountry": "CO"},
+      "areaServed": {"@type": "Country", "name": "Colombia"},
+      "knowsAbout": ["Fotografía deportiva", "Fútbol", "Atletismo", "Ciclismo"],
+      "founder": {"@id": "https://www.oscarzarateph.com/#person"},
+      "sameAs": ["https://instagram.com/oscarzarateph"]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.oscarzarateph.com/#person",
+      "name": "Óscar Zárate",
+      "jobTitle": "Fotógrafo deportivo",
+      "url": "https://www.oscarzarateph.com/",
+      "image": "https://www.oscarzarateph.com/Perfil2.jpg",
+      "sameAs": ["https://instagram.com/oscarzarateph"]
+    }
+  ]
+}
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -88,6 +132,26 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:20px 48px;display:fl
 .service-name{font-family:'Barlow Condensed',sans-serif;font-size:1.3rem;letter-spacing:0.05em;margin-bottom:10px;}
 .service-desc{font-size:0.82rem;line-height:1.7;color:var(--light);}
 @media(max-width:768px){.services{padding:80px 24px;}.services-grid{grid-template-columns:1fr;}}
+
+.eventos{padding:100px 48px;border-top:1px solid var(--gray);}
+.eventos-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:4px;}
+.evento-card{position:relative;display:block;overflow:hidden;aspect-ratio:4/3;background:var(--gray);color:var(--white);text-decoration:none;}
+.evento-card img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;filter:brightness(0.7);transition:transform 0.5s ease,filter 0.5s ease;}
+.evento-card:hover img,.evento-card:focus-visible img{transform:scale(1.04);filter:brightness(0.9);}
+.evento-card:focus-visible{outline:2px solid var(--red);outline-offset:-2px;}
+.evento-info{position:absolute;left:0;right:0;bottom:0;padding:48px 28px 28px;background:linear-gradient(transparent,rgba(8,8,8,0.92));}
+.evento-tag{font-size:0.68rem;letter-spacing:0.3em;text-transform:uppercase;color:#ff4a3d;margin-bottom:8px;}
+.evento-name{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(1.6rem,3vw,2.4rem);line-height:1.05;letter-spacing:0.03em;margin-bottom:12px;}
+.evento-cta{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--light);}
+@media(max-width:768px){.eventos{padding:80px 24px;}.eventos-grid{grid-template-columns:1fr;}.evento-info{padding:40px 20px 20px;}}
+
+.hinchadas-banner{padding:96px 48px;border-top:1px solid var(--gray);background:linear-gradient(135deg,var(--red) 0%,var(--red-dim) 100%);}
+.hinchadas-eyebrow{font-size:0.72rem;letter-spacing:0.3em;text-transform:uppercase;margin-bottom:16px;}
+.hinchadas-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(3rem,7vw,5.5rem);line-height:0.95;letter-spacing:0.02em;margin-bottom:20px;}
+.hinchadas-desc{font-size:1rem;line-height:1.7;max-width:520px;margin-bottom:32px;}
+.hinchadas-btn{display:inline-block;background:var(--black);color:var(--white);padding:14px 28px;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;font-weight:500;transition:transform 0.2s ease,background 0.3s ease;}
+.hinchadas-btn:hover{background:var(--gray);transform:translateY(-2px);}
+@media(max-width:768px){.hinchadas-banner{padding:72px 24px;}}
 
 .gallery-section{border-top:1px solid var(--gray);}
 .gallery-header{padding:80px 48px 40px;}
@@ -175,6 +239,7 @@ footer{padding:32px 48px;border-top:1px solid var(--gray);display:flex;justify-c
     <li><a href="#servicios" onclick="closeNav()">Servicios</a></li>
     <li><a href="#sobre-mi" onclick="closeNav()">Sobre mí</a></li>
     <li><a href="#faq" onclick="closeNav()">FAQ</a></li>
+    <li><a href="#eventos" onclick="closeNav()">Eventos</a></li>
     <li><a href="hinchadas.html">Hinchada</a></li>
     <li><a href="#contacto" onclick="closeNav()">Contacto</a></li>
   </ul>
@@ -188,12 +253,13 @@ footer{padding:32px 48px;border-top:1px solid var(--gray);display:flex;justify-c
   <a href="#servicios" onclick="closeNav()">Servicios</a>
   <a href="#sobre-mi" onclick="closeNav()">Sobre mí</a>
   <a href="#faq" onclick="closeNav()">FAQ</a>
+  <a href="#eventos" onclick="closeNav()">Eventos</a>
   <a href="hinchadas.html">Hinchada</a>
   <a href="#contacto" onclick="closeNav()">Contacto</a>
 </div>
 
 <section class="hero">
-  <img class="hero-bg" src="OZS_0755-2.jpg" loading="eager" alt="Fotografía deportiva Óscar Zárate" />
+  <img class="hero-bg" src="OZS_0755-2.jpg" loading="eager" fetchpriority="high" alt="Fotografía deportiva Óscar Zárate" />
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <p class="hero-eyebrow">Fotografía Deportiva · Acreditado Dimayor · Colombia</p>
@@ -209,7 +275,7 @@ footer{padding:32px 48px;border-top:1px solid var(--gray);display:flex;justify-c
 
 <section class="about" id="sobre-mi">
   <div class="about-visual reveal">
-    <img src="Perfil2.jpg" alt="Óscar Zárate fotógrafo deportivo" />
+    <img src="Perfil2.jpg" width="1920" height="1920" loading="lazy" decoding="async" alt="Óscar Zárate fotógrafo deportivo" />
     <div class="about-block-accent"></div>
   </div>
   <div class="about-content">
@@ -253,107 +319,124 @@ footer{padding:32px 48px;border-top:1px solid var(--gray);display:flex;justify-c
     <button class="filter-btn" data-filter="ciclismo">Ciclismo</button>
   </div>
   <div class="gallery-grid">
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_8691.jpg" loading="lazy" alt="Fútbol"/><div class="gallery-overlay"><span>Fútbol</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_9436.jpg" loading="lazy" alt="Equipo"/><div class="gallery-overlay"><span>Equipo</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_0755-2.jpg" loading="lazy" alt="Celebración"/><div class="gallery-overlay"><span>Celebración</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_1159.jpg" loading="lazy" alt="Concentración"/><div class="gallery-overlay"><span>Concentración</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_1208.jpg" loading="lazy" alt="Dolor"/><div class="gallery-overlay"><span>Dolor</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_1219-Topaz-Gigapixel-2X.jpg" loading="lazy" alt="Detalle"/><div class="gallery-overlay"><span>Detalle</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_1332.jpg" loading="lazy" alt="Precisión"/><div class="gallery-overlay"><span>Precisión</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_1371.jpg" loading="lazy" alt="Tiro"/><div class="gallery-overlay"><span>Tiro</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_1325.jpg" loading="lazy" alt="Jugada"/><div class="gallery-overlay"><span>Jugada</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_1373.jpg" loading="lazy" alt="Contacto"/><div class="gallery-overlay"><span>Contacto</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_1375.jpg" loading="lazy" alt="Identidad"/><div class="gallery-overlay"><span>Identidad</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_1427.jpg" loading="lazy" alt="Disputa"/><div class="gallery-overlay"><span>Disputa</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_1589.jpg" loading="lazy" alt="El juego"/><div class="gallery-overlay"><span>El juego</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_2040.jpg" loading="lazy" alt="Guayos"/><div class="gallery-overlay"><span>Guayos</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_2170.jpg" loading="lazy" alt="Número 26"/><div class="gallery-overlay"><span>Número 26</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_2839.jpg" loading="lazy" alt="Córner"/><div class="gallery-overlay"><span>Córner</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_2916.jpg" loading="lazy" alt="El momento"/><div class="gallery-overlay"><span>El momento</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_2956.jpg" loading="lazy" alt="Tensión"/><div class="gallery-overlay"><span>Tensión</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_8369-3.jpg" loading="lazy" alt="Fútbol femenino"/><div class="gallery-overlay"><span>Fútbol femenino</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_8214-3.jpg" loading="lazy" alt="Acción"/><div class="gallery-overlay"><span>Acción</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_8004-3.jpg" loading="lazy" alt="Carrera"/><div class="gallery-overlay"><span>Carrera</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_7703-5.jpg" loading="lazy" alt="Detalle"/><div class="gallery-overlay"><span>Detalle</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_7838-2.jpg" loading="lazy" alt="Portería"/><div class="gallery-overlay"><span>Portería</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_7986-2.jpg" loading="lazy" alt="Disputa"/><div class="gallery-overlay"><span>Disputa</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_8003-2.jpg" loading="lazy" alt="Velocidad"/><div class="gallery-overlay"><span>Velocidad</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_0006.jpg" loading="lazy" alt="Fútbol"/><div class="gallery-overlay"><span>Fútbol</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_0589.jpg" loading="lazy" alt="Fútbol"/><div class="gallery-overlay"><span>Fútbol</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_0609.jpg" loading="lazy" alt="Fútbol"/><div class="gallery-overlay"><span>Fútbol</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_0621.jpg" loading="lazy" alt="Fútbol"/><div class="gallery-overlay"><span>Fútbol</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_9555.jpg" loading="lazy" alt="Fútbol"/><div class="gallery-overlay"><span>Fútbol</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_9561.jpg" loading="lazy" alt="Fútbol"/><div class="gallery-overlay"><span>Fútbol</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_9567.jpg" loading="lazy" alt="Fútbol"/><div class="gallery-overlay"><span>Fútbol</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_9617.jpg" loading="lazy" alt="Fútbol"/><div class="gallery-overlay"><span>Fútbol</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_9627.jpg" loading="lazy" alt="Fútbol"/><div class="gallery-overlay"><span>Fútbol</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_9716.jpg" loading="lazy" alt="Fútbol"/><div class="gallery-overlay"><span>Fútbol</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="OZS_9998.jpg" loading="lazy" alt="Fútbol"/><div class="gallery-overlay"><span>Fútbol</span></div></div>
-    <div class="gallery-item" data-cat="futbol"><img src="futbol-arbitros.jpg" loading="lazy" alt="Fútbol — Tarjeta roja"/><div class="gallery-overlay"><span>Tarjeta roja</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5373-Edit.jpg" loading="lazy" alt="Atletismo"/><div class="gallery-overlay"><span>Atletismo</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5427.jpg" loading="lazy" alt="Running"/><div class="gallery-overlay"><span>Running</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5502.jpg" loading="lazy" alt="Foco"/><div class="gallery-overlay"><span>Foco</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5524.jpg" loading="lazy" alt="Resistencia"/><div class="gallery-overlay"><span>Resistencia</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5537-Edit.jpg" loading="lazy" alt="Velocidad"/><div class="gallery-overlay"><span>Velocidad</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5671.jpg" loading="lazy" alt="Esfuerzo"/><div class="gallery-overlay"><span>Esfuerzo</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5679.jpg" loading="lazy" alt="Determinación"/><div class="gallery-overlay"><span>Determinación</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5738.jpg" loading="lazy" alt="Carrera"/><div class="gallery-overlay"><span>Carrera</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5743.jpg" loading="lazy" alt="Sonrisa"/><div class="gallery-overlay"><span>Sonrisa</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5883.jpg" loading="lazy" alt="Agua"/><div class="gallery-overlay"><span>Agua</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS2220.jpg" loading="lazy" alt="Running"/><div class="gallery-overlay"><span>Running</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS2422.jpg" loading="lazy" alt="Doble exposición"/><div class="gallery-overlay"><span>Doble exposición</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5126.jpg" loading="lazy" alt="Running"/><div class="gallery-overlay"><span>Running</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5436.jpg" loading="lazy" alt="Atletismo"/><div class="gallery-overlay"><span>Atletismo</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5497.jpg" loading="lazy" alt="Carrera"/><div class="gallery-overlay"><span>Carrera</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5512.jpg" loading="lazy" alt="Foco"/><div class="gallery-overlay"><span>Foco</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5559.jpg" loading="lazy" alt="Duatlón"/><div class="gallery-overlay"><span>Duatlón</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="OZS_running_puno.jpg" loading="lazy" alt="Corredora celebrando"/><div class="gallery-overlay"><span>Fuerza</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="OZS_running_beso.jpg" loading="lazy" alt="Corredora enviando un beso"/><div class="gallery-overlay"><span>Alegría</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="OZS_running_victoria.jpg" loading="lazy" alt="Corredora haciendo señal de victoria"/><div class="gallery-overlay"><span>Victoria</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="OZS_running_saludo.jpg" loading="lazy" alt="Corredor con bandera de Colombia"/><div class="gallery-overlay"><span>Orgullo</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="OZS_running_grupo.jpg" loading="lazy" alt="Grupo de corredores celebrando"/><div class="gallery-overlay"><span>Equipo</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="OZS_running_bandera.jpg" loading="lazy" alt="Corredor con capa tricolor"/><div class="gallery-overlay"><span>Patria</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="corremitierra-01.jpg" loading="lazy" alt="Atletismo — Ritmo"/><div class="gallery-overlay"><span>Ritmo</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="corremitierra-02.jpg" loading="lazy" alt="Atletismo — Celebración"/><div class="gallery-overlay"><span>Celebración</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="corremitierra-03.jpg" loading="lazy" alt="Atletismo — Victoria"/><div class="gallery-overlay"><span>Victoria</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="corremitierra-04.jpg" loading="lazy" alt="Atletismo — Buena energía"/><div class="gallery-overlay"><span>Buena energía</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="corremitierra-05.jpg" loading="lazy" alt="Atletismo — Medallas"/><div class="gallery-overlay"><span>Medallas</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="corremitierra-06.jpg" loading="lazy" alt="Atletismo — Puente"/><div class="gallery-overlay"><span>Puente</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="corremitierra-07.jpg" loading="lazy" alt="Atletismo — Concentración"/><div class="gallery-overlay"><span>Concentración</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="corremitierra-08.jpg" loading="lazy" alt="Atletismo — Alegría"/><div class="gallery-overlay"><span>Alegría</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="corremitierra-09.jpg" loading="lazy" alt="Atletismo — Salto"/><div class="gallery-overlay"><span>Salto</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="corremitierra-10.jpg" loading="lazy" alt="Atletismo — Fuerza"/><div class="gallery-overlay"><span>Fuerza</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="corremitierra-11.jpg" loading="lazy" alt="Atletismo — Bandera"/><div class="gallery-overlay"><span>Bandera</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="corremitierra-12.jpg" loading="lazy" alt="Atletismo — Directo al lente"/><div class="gallery-overlay"><span>Directo al lente</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="corremitierra-13.jpg" loading="lazy" alt="Atletismo — Actitud"/><div class="gallery-overlay"><span>Actitud</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="running-01.jpg" loading="lazy" alt="Atletismo — Vuelo"/><div class="gallery-overlay"><span>Vuelo</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="running-02.jpg" loading="lazy" alt="Atletismo — Al compás"/><div class="gallery-overlay"><span>Al compás</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="running-03.jpg" loading="lazy" alt="Atletismo — Dos dedos"/><div class="gallery-overlay"><span>Dos dedos</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="running-04.jpg" loading="lazy" alt="Atletismo — Entre el verde"/><div class="gallery-overlay"><span>Entre el verde</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="running-05.jpg" loading="lazy" alt="Atletismo — Sonrisa"/><div class="gallery-overlay"><span>Sonrisa</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="running-06.jpg" loading="lazy" alt="Atletismo — Corazón"/><div class="gallery-overlay"><span>Corazón</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="running-07.jpg" loading="lazy" alt="Atletismo — Ánimo"/><div class="gallery-overlay"><span>Ánimo</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="running-08.jpg" loading="lazy" alt="Atletismo — Orgullo colombiano"/><div class="gallery-overlay"><span>Orgullo colombiano</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="running-09.jpg" loading="lazy" alt="Atletismo — Paso a paso"/><div class="gallery-overlay"><span>Paso a paso</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="running-10.jpg" loading="lazy" alt="Atletismo — Pose ganadora"/><div class="gallery-overlay"><span>Pose ganadora</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="running-11.jpg" loading="lazy" alt="Atletismo — Travesura"/><div class="gallery-overlay"><span>Travesura</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="running-12.jpg" loading="lazy" alt="Atletismo — 41K"/><div class="gallery-overlay"><span>41K</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="running-13.jpg" loading="lazy" alt="Atletismo — Intensidad"/><div class="gallery-overlay"><span>Intensidad</span></div></div>
-    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="running-14.jpg" loading="lazy" alt="Atletismo — Rumbo a meta"/><div class="gallery-overlay"><span>Rumbo a meta</span></div></div>
-    <div class="gallery-item" data-cat="ciclismo" style="display:none;"><img src="_OZS4167.jpg" loading="lazy" alt="Ciclismo"/><div class="gallery-overlay"><span>Ciclismo</span></div></div>
-    <div class="gallery-item" data-cat="ciclismo" style="display:none;"><img src="_OZS4522.jpg" loading="lazy" alt="Pelotón"/><div class="gallery-overlay"><span>Pelotón</span></div></div>
-    <div class="gallery-item" data-cat="ciclismo" style="display:none;"><img src="_OZS4830.jpg" loading="lazy" alt="Colombia"/><div class="gallery-overlay"><span>Colombia</span></div></div>
-    <div class="gallery-item" data-cat="ciclismo" style="display:none;"><img src="_OZS4856.jpg" loading="lazy" alt="Hidratación"/><div class="gallery-overlay"><span>Hidratación</span></div></div>
-    <div class="gallery-item" data-cat="ciclismo" style="display:none;"><img src="_OZS3708.jpg" loading="lazy" alt="Panning"/><div class="gallery-overlay"><span>Panning</span></div></div>
-    <div class="gallery-item" data-cat="ciclismo" style="display:none;"><img src="Carrusel.jpg" loading="lazy" alt="Doble exposición"/><div class="gallery-overlay"><span>Doble exposición</span></div></div>
-    <div class="gallery-item" data-cat="ciclismo" style="display:none;"><img src="_OZS3413.jpg" loading="lazy" alt="Composición"/><div class="gallery-overlay"><span>Composición</span></div></div>
-    <div class="gallery-item" data-cat="ciclismo" style="display:none;"><img src="_OZS3464.jpg" loading="lazy" alt="Ciclismo"/><div class="gallery-overlay"><span>Ciclismo</span></div></div>
-    <div class="gallery-item" data-cat="ciclismo" style="display:none;"><img src="_OZS6053.jpg" loading="lazy" alt="Composición"/><div class="gallery-overlay"><span>Composición</span></div></div>
-    <div class="gallery-item" data-cat="ciclismo" style="display:none;"><img src="Insta_2_.jpg" loading="lazy" alt="Portafolio"/><div class="gallery-overlay"><span>Portafolio</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_8691.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de fútbol en Colombia"/><div class="gallery-overlay"><span>Fútbol</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_9436.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de fútbol — Equipo"/><div class="gallery-overlay"><span>Equipo</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_0755-2.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de fútbol — Celebración"/><div class="gallery-overlay"><span>Celebración</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_1159.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de fútbol — Concentración"/><div class="gallery-overlay"><span>Concentración</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_1208.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de fútbol — Dolor"/><div class="gallery-overlay"><span>Dolor</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_1219-Topaz-Gigapixel-2X.jpg" loading="lazy" decoding="async" width="1332" height="2000" alt="Fotografía de fútbol — Detalle"/><div class="gallery-overlay"><span>Detalle</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_1332.jpg" loading="lazy" decoding="async" width="1920" height="1279" alt="Fotografía de fútbol — Precisión"/><div class="gallery-overlay"><span>Precisión</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_1371.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de fútbol — Tiro"/><div class="gallery-overlay"><span>Tiro</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_1325.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de fútbol — Jugada"/><div class="gallery-overlay"><span>Jugada</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_1373.jpg" loading="lazy" decoding="async" width="1920" height="1280" alt="Fotografía de fútbol — Contacto"/><div class="gallery-overlay"><span>Contacto</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_1375.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de fútbol — Identidad"/><div class="gallery-overlay"><span>Identidad</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_1427.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de fútbol — Disputa"/><div class="gallery-overlay"><span>Disputa</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_1589.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de fútbol — El juego"/><div class="gallery-overlay"><span>El juego</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_2040.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de fútbol — Guayos"/><div class="gallery-overlay"><span>Guayos</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_2170.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de fútbol — Número 26"/><div class="gallery-overlay"><span>Número 26</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_2839.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de fútbol — Córner"/><div class="gallery-overlay"><span>Córner</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_2916.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de fútbol — El momento"/><div class="gallery-overlay"><span>El momento</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_2956.jpg" loading="lazy" decoding="async" width="1920" height="1279" alt="Fotografía de fútbol — Tensión"/><div class="gallery-overlay"><span>Tensión</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_8369-3.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de fútbol — Fútbol femenino"/><div class="gallery-overlay"><span>Fútbol femenino</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_8214-3.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de fútbol — Acción"/><div class="gallery-overlay"><span>Acción</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_8004-3.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de fútbol — Carrera"/><div class="gallery-overlay"><span>Carrera</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_7703-5.jpg" loading="lazy" decoding="async" width="924" height="1386" alt="Fotografía de fútbol — Detalle, foto 2"/><div class="gallery-overlay"><span>Detalle</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_7838-2.jpg" loading="lazy" decoding="async" width="1920" height="1080" alt="Fotografía de fútbol — Portería"/><div class="gallery-overlay"><span>Portería</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_7986-2.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de fútbol — Disputa, foto 2"/><div class="gallery-overlay"><span>Disputa</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_8003-2.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de fútbol — Velocidad"/><div class="gallery-overlay"><span>Velocidad</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_0006.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de fútbol en Colombia, foto 2"/><div class="gallery-overlay"><span>Fútbol</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_0589.jpg" loading="lazy" decoding="async" width="1408" height="2112" alt="Fotografía de fútbol en Colombia, foto 3"/><div class="gallery-overlay"><span>Fútbol</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_0609.jpg" loading="lazy" decoding="async" width="1334" height="2000" alt="Fotografía de fútbol en Colombia, foto 4"/><div class="gallery-overlay"><span>Fútbol</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_0621.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de fútbol en Colombia, foto 5"/><div class="gallery-overlay"><span>Fútbol</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_9555.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de fútbol en Colombia, foto 6"/><div class="gallery-overlay"><span>Fútbol</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_9561.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de fútbol en Colombia, foto 7"/><div class="gallery-overlay"><span>Fútbol</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_9567.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de fútbol en Colombia, foto 8"/><div class="gallery-overlay"><span>Fútbol</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_9617.jpg" loading="lazy" decoding="async" width="2000" height="1333" alt="Fotografía de fútbol en Colombia, foto 9"/><div class="gallery-overlay"><span>Fútbol</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_9627.jpg" loading="lazy" decoding="async" width="2000" height="1333" alt="Fotografía de fútbol en Colombia, foto 10"/><div class="gallery-overlay"><span>Fútbol</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_9716.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de fútbol en Colombia, foto 11"/><div class="gallery-overlay"><span>Fútbol</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="OZS_9998.jpg" loading="lazy" decoding="async" width="1334" height="2000" alt="Fotografía de fútbol en Colombia, foto 12"/><div class="gallery-overlay"><span>Fútbol</span></div></div>
+    <div class="gallery-item" data-cat="futbol"><img src="futbol-arbitros.jpg" loading="lazy" decoding="async" width="1200" height="1500" alt="Árbitros de la FCF mostrando tarjeta roja durante un partido de fútbol profesional"/><div class="gallery-overlay"><span>Tarjeta roja</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5373-Edit.jpg" loading="lazy" decoding="async" width="1351" height="2000" alt="Fotografía de atletismo y running en Colombia"/><div class="gallery-overlay"><span>Atletismo</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5427.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de atletismo y running — Running"/><div class="gallery-overlay"><span>Running</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5502.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de atletismo y running — Foco"/><div class="gallery-overlay"><span>Foco</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5524.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de atletismo y running — Resistencia"/><div class="gallery-overlay"><span>Resistencia</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5537-Edit.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de atletismo y running — Velocidad"/><div class="gallery-overlay"><span>Velocidad</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5671.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de atletismo y running — Esfuerzo"/><div class="gallery-overlay"><span>Esfuerzo</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5679.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de atletismo y running — Determinación"/><div class="gallery-overlay"><span>Determinación</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5738.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de atletismo y running — Carrera"/><div class="gallery-overlay"><span>Carrera</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5743.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de atletismo y running — Sonrisa"/><div class="gallery-overlay"><span>Sonrisa</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5883.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de atletismo y running — Agua"/><div class="gallery-overlay"><span>Agua</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS2220.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de atletismo y running — Running, foto 2"/><div class="gallery-overlay"><span>Running</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS2422.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de atletismo y running — Doble exposición"/><div class="gallery-overlay"><span>Doble exposición</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5126.jpg" loading="lazy" decoding="async" width="1203" height="1805" alt="Fotografía de atletismo y running — Running, foto 3"/><div class="gallery-overlay"><span>Running</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5436.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de atletismo y running en Colombia, foto 2"/><div class="gallery-overlay"><span>Atletismo</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5497.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de atletismo y running — Carrera, foto 2"/><div class="gallery-overlay"><span>Carrera</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5512.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de atletismo y running — Foco, foto 2"/><div class="gallery-overlay"><span>Foco</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="_OZS5559.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de atletismo y running — Duatlón"/><div class="gallery-overlay"><span>Duatlón</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="OZS_running_puno.jpg" loading="lazy" decoding="async" width="1466" height="2200" alt="Fotografía de atletismo y running — Corredora celebrando"/><div class="gallery-overlay"><span>Fuerza</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="OZS_running_beso.jpg" loading="lazy" decoding="async" width="1466" height="2200" alt="Corredora enviando un beso"/><div class="gallery-overlay"><span>Alegría</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="OZS_running_victoria.jpg" loading="lazy" decoding="async" width="1466" height="2200" alt="Corredora haciendo señal de victoria"/><div class="gallery-overlay"><span>Victoria</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="OZS_running_saludo.jpg" loading="lazy" decoding="async" width="1466" height="2200" alt="Corredor con bandera de Colombia"/><div class="gallery-overlay"><span>Orgullo</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="OZS_running_grupo.jpg" loading="lazy" decoding="async" width="1466" height="2200" alt="Grupo de corredores celebrando"/><div class="gallery-overlay"><span>Equipo</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="OZS_running_bandera.jpg" loading="lazy" decoding="async" width="1466" height="2200" alt="Corredor con capa tricolor"/><div class="gallery-overlay"><span>Patria</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="corremitierra-01.jpg" loading="lazy" decoding="async" width="1200" height="1800" alt="Fotografía de atletismo y running en la carrera Corremitierra — Ritmo"/><div class="gallery-overlay"><span>Ritmo</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="corremitierra-02.jpg" loading="lazy" decoding="async" width="1200" height="1800" alt="Fotografía de atletismo y running en la carrera Corremitierra — Celebración"/><div class="gallery-overlay"><span>Celebración</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="corremitierra-03.jpg" loading="lazy" decoding="async" width="1200" height="1800" alt="Fotografía de atletismo y running en la carrera Corremitierra — Victoria"/><div class="gallery-overlay"><span>Victoria</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="corremitierra-04.jpg" loading="lazy" decoding="async" width="1200" height="1800" alt="Fotografía de atletismo y running en la carrera Corremitierra — Buena energía"/><div class="gallery-overlay"><span>Buena energía</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="corremitierra-05.jpg" loading="lazy" decoding="async" width="1200" height="1800" alt="Fotografía de atletismo y running en la carrera Corremitierra — Medallas"/><div class="gallery-overlay"><span>Medallas</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="corremitierra-06.jpg" loading="lazy" decoding="async" width="1200" height="1800" alt="Fotografía de atletismo y running en la carrera Corremitierra — Puente"/><div class="gallery-overlay"><span>Puente</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="corremitierra-07.jpg" loading="lazy" decoding="async" width="1200" height="1800" alt="Fotografía de atletismo y running en la carrera Corremitierra — Concentración"/><div class="gallery-overlay"><span>Concentración</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="corremitierra-08.jpg" loading="lazy" decoding="async" width="1200" height="1800" alt="Fotografía de atletismo y running en la carrera Corremitierra — Alegría"/><div class="gallery-overlay"><span>Alegría</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="corremitierra-09.jpg" loading="lazy" decoding="async" width="1200" height="1800" alt="Fotografía de atletismo y running en la carrera Corremitierra — Salto"/><div class="gallery-overlay"><span>Salto</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="corremitierra-10.jpg" loading="lazy" decoding="async" width="1200" height="1800" alt="Fotografía de atletismo y running en la carrera Corremitierra — Fuerza"/><div class="gallery-overlay"><span>Fuerza</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="corremitierra-11.jpg" loading="lazy" decoding="async" width="1200" height="1800" alt="Fotografía de atletismo y running en la carrera Corremitierra — Bandera"/><div class="gallery-overlay"><span>Bandera</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="corremitierra-12.jpg" loading="lazy" decoding="async" width="1200" height="1800" alt="Fotografía de atletismo y running en la carrera Corremitierra — Directo al lente"/><div class="gallery-overlay"><span>Directo al lente</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="corremitierra-13.jpg" loading="lazy" decoding="async" width="1200" height="1800" alt="Fotografía de atletismo y running en la carrera Corremitierra — Actitud"/><div class="gallery-overlay"><span>Actitud</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="running-01.jpg" loading="lazy" decoding="async" width="1070" height="1600" alt="Fotografía de atletismo y running en Colombia — Vuelo"/><div class="gallery-overlay"><span>Vuelo</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="running-02.jpg" loading="lazy" decoding="async" width="1200" height="1793" alt="Fotografía de atletismo y running en la Carrera de las Rosas — Al compás"/><div class="gallery-overlay"><span>Al compás</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="running-03.jpg" loading="lazy" decoding="async" width="1200" height="1793" alt="Fotografía de atletismo y running en la Carrera de las Rosas — Dos dedos"/><div class="gallery-overlay"><span>Dos dedos</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="running-04.jpg" loading="lazy" decoding="async" width="1200" height="1793" alt="Fotografía de atletismo y running en la Carrera de las Rosas — Entre el verde"/><div class="gallery-overlay"><span>Entre el verde</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="running-05.jpg" loading="lazy" decoding="async" width="1200" height="1800" alt="Fotografía de atletismo y running en Colombia — Sonrisa"/><div class="gallery-overlay"><span>Sonrisa</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="running-06.jpg" loading="lazy" decoding="async" width="1200" height="1800" alt="Fotografía de atletismo y running en la carrera Corre como el Viento — Corazón"/><div class="gallery-overlay"><span>Corazón</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="running-07.jpg" loading="lazy" decoding="async" width="1200" height="1800" alt="Fotografía de atletismo y running en la carrera Corre como el Viento — Ánimo"/><div class="gallery-overlay"><span>Ánimo</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="running-08.jpg" loading="lazy" decoding="async" width="1200" height="1800" alt="Fotografía de atletismo y running en la carrera Corre como el Viento — Orgullo colombiano"/><div class="gallery-overlay"><span>Orgullo colombiano</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="running-09.jpg" loading="lazy" decoding="async" width="1200" height="1800" alt="Fotografía de atletismo y running en la carrera Corre como el Viento — Paso a paso"/><div class="gallery-overlay"><span>Paso a paso</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="running-10.jpg" loading="lazy" decoding="async" width="1200" height="1800" alt="Fotografía de atletismo y running en la carrera Corre como el Viento — Pose ganadora"/><div class="gallery-overlay"><span>Pose ganadora</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="running-11.jpg" loading="lazy" decoding="async" width="1200" height="1800" alt="Fotografía de atletismo y running en la carrera Corremitierra — Travesura"/><div class="gallery-overlay"><span>Travesura</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="running-12.jpg" loading="lazy" decoding="async" width="1200" height="1800" alt="Fotografía de atletismo y running en Colombia — 41K"/><div class="gallery-overlay"><span>41K</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="running-13.jpg" loading="lazy" decoding="async" width="1200" height="1600" alt="Fotografía de atletismo y running en Colombia — Intensidad"/><div class="gallery-overlay"><span>Intensidad</span></div></div>
+    <div class="gallery-item" data-cat="atletismo" style="display:none;"><img src="running-14.jpg" loading="lazy" decoding="async" width="1200" height="1600" alt="Fotografía de atletismo y running en la Media Maratón de Villavicencio — Rumbo a meta"/><div class="gallery-overlay"><span>Rumbo a meta</span></div></div>
+    <div class="gallery-item" data-cat="ciclismo" style="display:none;"><img src="_OZS4167.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de ciclismo en Colombia"/><div class="gallery-overlay"><span>Ciclismo</span></div></div>
+    <div class="gallery-item" data-cat="ciclismo" style="display:none;"><img src="_OZS4522.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de ciclismo — Pelotón"/><div class="gallery-overlay"><span>Pelotón</span></div></div>
+    <div class="gallery-item" data-cat="ciclismo" style="display:none;"><img src="_OZS4830.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de ciclismo — Colombia"/><div class="gallery-overlay"><span>Colombia</span></div></div>
+    <div class="gallery-item" data-cat="ciclismo" style="display:none;"><img src="_OZS4856.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de ciclismo — Hidratación"/><div class="gallery-overlay"><span>Hidratación</span></div></div>
+    <div class="gallery-item" data-cat="ciclismo" style="display:none;"><img src="_OZS3708.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de ciclismo — Panning"/><div class="gallery-overlay"><span>Panning</span></div></div>
+    <div class="gallery-item" data-cat="ciclismo" style="display:none;"><img src="Carrusel.jpg" loading="lazy" decoding="async" width="1920" height="400" alt="Fotografía de ciclismo — Doble exposición"/><div class="gallery-overlay"><span>Doble exposición</span></div></div>
+    <div class="gallery-item" data-cat="ciclismo" style="display:none;"><img src="_OZS3413.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de ciclismo — Composición"/><div class="gallery-overlay"><span>Composición</span></div></div>
+    <div class="gallery-item" data-cat="ciclismo" style="display:none;"><img src="_OZS3464.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de ciclismo en Colombia, foto 2"/><div class="gallery-overlay"><span>Ciclismo</span></div></div>
+    <div class="gallery-item" data-cat="ciclismo" style="display:none;"><img src="_OZS6053.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Fotografía de ciclismo — Composición, foto 2"/><div class="gallery-overlay"><span>Composición</span></div></div>
+    <div class="gallery-item" data-cat="ciclismo" style="display:none;"><img src="Insta_2_.jpg" loading="lazy" decoding="async" width="1920" height="684" alt="Fotografía de ciclismo — Portafolio"/><div class="gallery-overlay"><span>Portafolio</span></div></div>
   </div>
 </section>
 
 <!-- HINCHADAS -->
+<!-- EVENTOS -->
+<section class="eventos" id="eventos">
+  <div class="section-header reveal">
+    <div><p class="section-tag">Coberturas</p><h2 class="section-title">FOTOS DE<br>EVENTOS</h2></div>
+  </div>
+  <div class="eventos-grid">
+    <a class="evento-card reveal" href="media-maraton-villavicencio-2026.html">
+      <img src="_OZS5373-Edit.jpg" loading="lazy" decoding="async" width="1351" height="2000" alt="Atleta corriendo en la Media Maratón de Villavicencio 2026"/>
+      <div class="evento-info"><p class="evento-tag">Running · Abril 2026</p><h3 class="evento-name">Media Maratón de Villavicencio 2026</h3><span class="evento-cta">Encuentra tu foto →</span></div>
+    </a>
+    <a class="evento-card reveal" href="travesia-bogota-villavicencio-2026.html">
+      <img src="_OZS4167.jpg" loading="lazy" decoding="async" width="1333" height="2000" alt="Ciclista en la Travesía Bogotá Villavicencio 2026"/>
+      <div class="evento-info"><p class="evento-tag">Ciclismo · Abril 2026</p><h3 class="evento-name">Travesía Bogotá Villavicencio 2026</h3><span class="evento-cta">Encuentra tu foto →</span></div>
+    </a>
+  </div>
+</section>
+
 <section class="hinchadas-banner" id="hinchada">
   <div class="hinchadas-left reveal">
     <p class="hinchadas-eyebrow">📸 Descarga gratis · América de Cali</p>
